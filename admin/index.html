@@ -3,94 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethnic Grace Panipat | Admin Dashboard</title>
+    <title>Ethnic Grace Panipat - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { brand: { 50: '#FDF8F7', rose: '#8E2344', 'rose-dark': '#69152F' } },
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] }
-                }
-            }
-        }
-    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+    </style>
 </head>
-<body class="bg-stone-100 text-stone-800 font-sans antialiased min-h-screen">
+<body class="bg-stone-100 text-stone-800 antialiased min-h-screen">
 
-    <!-- Auth PIN Gate -->
+    <!-- Auth PIN Gate (No PIN printed on screen) -->
     <div id="authGate" class="fixed inset-0 z-50 bg-stone-900/90 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl border border-stone-200">
-            <div class="w-12 h-12 rounded-full bg-brand-50 text-brand-rose mx-auto flex items-center justify-center text-lg mb-3 font-serif font-bold border">EG</div>
-            <h2 class="font-serif text-lg font-bold text-stone-900">Ethnic Grace Panipat Admin</h2>
-            <p class="text-xs text-stone-500 mb-4">Enter PIN to manage suits & prices</p>
-            <form id="authForm" class="space-y-3">
-                <input type="password" id="pinInput" placeholder="Enter PIN" maxlength="20" required
-                    class="w-full text-center text-lg font-bold py-2.5 px-3 bg-stone-50 border border-stone-300 rounded-xl focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                <div id="authError" class="text-xs text-red-600 font-semibold hidden">Incorrect PIN! (Chirag@12300)</div>
-                <button type="submit" class="w-full bg-brand-rose hover:bg-brand-rose-dark text-white font-bold py-2.5 rounded-xl text-xs transition">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-8 text-center shadow-2xl border border-stone-200">
+            <div class="w-12 h-12 rounded-full bg-rose-50 text-rose-800 mx-auto flex items-center justify-center text-lg mb-3 font-serif font-bold border border-rose-200">EG</div>
+            <h2 class="font-serif text-xl font-bold text-stone-900 mb-1">Ethnic Grace Admin</h2>
+            <p class="text-xs text-stone-500 mb-5">Enter your secret PIN to access the dashboard</p>
+            
+            <form id="authForm" class="space-y-4">
+                <input type="password" id="pinInput" placeholder="Enter PIN" required
+                    class="w-full text-center text-xl font-bold py-3 px-4 bg-stone-50 border border-stone-300 rounded-xl focus:ring-2 focus:ring-rose-800 focus:outline-none tracking-widest">
+                <div id="authError" class="text-xs text-red-600 font-bold hidden">Incorrect PIN! Please try again.</div>
+                <button type="submit" class="w-full bg-rose-800 hover:bg-rose-900 text-white font-bold py-3 rounded-xl text-sm transition shadow-md">
                     Unlock Dashboard
                 </button>
             </form>
-            <p class="mt-3 text-[11px] text-stone-400">PIN: <span class="font-mono font-bold text-stone-600">Chirag@12300</span></p>
         </div>
     </div>
 
-    <!-- Main Dashboard -->
+    <!-- Admin Dashboard Main App -->
     <div id="dashboardApp" class="hidden min-h-screen flex flex-col">
-        <!-- Top Nav -->
+        
+        <!-- Header -->
         <header class="bg-white border-b border-stone-200 sticky top-0 z-30 shadow-xs">
             <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 rounded-full bg-brand-rose text-white font-serif font-bold text-xs flex items-center justify-center">EG</div>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-rose-800 text-white font-serif font-bold text-xs flex items-center justify-center">EG</div>
                     <div>
-                        <h1 class="font-serif font-bold text-sm text-stone-900 leading-tight">Ethnic Grace Panipat</h1>
+                        <h1 class="font-serif font-bold text-sm text-stone-900">Ethnic Grace Panipat • Admin</h1>
                         <span class="text-[10px] text-emerald-600 font-bold">WhatsApp: +91 95182 85233</span>
                     </div>
                 </div>
 
                 <div class="flex items-center gap-2">
-                    <button onclick="switchTab('products')" class="tab-btn active-tab text-xs font-bold px-3 py-1.5 rounded-lg bg-stone-100" data-tab="products">👗 Outfits</button>
-                    <button onclick="switchTab('settings')" class="tab-btn text-xs text-stone-600 px-3 py-1.5 rounded-lg hover:bg-stone-50" data-tab="settings">⚙️ Settings</button>
-                    <a href="../index.html" target="_blank" class="text-xs bg-brand-50 text-brand-rose font-bold px-3 py-1.5 rounded-lg border border-brand-rose/20">👁️ View Store</a>
-                    <button onclick="logoutAdmin()" class="text-xs text-stone-400 hover:text-red-600 p-1.5">🔒</button>
+                    <button onclick="switchTab('products')" class="tab-btn text-xs font-bold px-3 py-2 rounded-lg bg-stone-100" data-tab="products">👗 Products</button>
+                    <button onclick="switchTab('settings')" class="tab-btn text-xs text-stone-600 px-3 py-2 rounded-lg hover:bg-stone-50" data-tab="settings">⚙️ Settings</button>
+                    <a href="../index.html" target="_blank" class="text-xs bg-rose-50 text-rose-800 font-bold px-3 py-2 rounded-lg border border-rose-200">👁️ View Website</a>
+                    <button onclick="logoutAdmin()" class="text-xs text-stone-400 hover:text-red-600 p-2" title="Lock">🔒</button>
                 </div>
             </div>
         </header>
 
-        <!-- Body Content -->
+        <!-- Main Body -->
         <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full">
             
             <!-- TAB 1: PRODUCTS -->
             <section id="tab-products" class="tab-content block">
                 <div class="bg-white p-4 rounded-2xl border border-stone-200 mb-4 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <div class="flex items-center gap-2 w-full sm:w-auto">
-                        <input type="text" id="adminSearch" placeholder="Search outfits..." class="text-xs bg-stone-50 border border-stone-200 rounded-xl py-2 px-3 focus:outline-none w-full sm:w-48">
-                        <select id="adminCategoryFilter" class="text-xs bg-stone-50 border border-stone-200 rounded-xl py-2 px-2">
-                            <option value="All">All Categories</option>
-                            <option value="Designer Suits">Designer Suits</option>
-                            <option value="Anarkali Sets">Anarkali Sets</option>
-                            <option value="Festive Kurtis">Festive Kurtis</option>
-                            <option value="Silk Sarees">Silk Sarees</option>
-                            <option value="Bridal Lehengas">Bridal Lehengas</option>
-                        </select>
+                        <input type="text" id="adminSearch" placeholder="Search suits..." oninput="renderAdminTable()" class="text-xs bg-stone-50 border border-stone-200 rounded-xl py-2 px-3 focus:outline-none w-full sm:w-48">
                     </div>
-                    <button onclick="openProductModal()" class="w-full sm:w-auto bg-brand-rose hover:bg-brand-rose-dark text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xs transition">
-                        + Add New Suit
+                    <button onclick="openProductModal()" class="w-full sm:w-auto bg-rose-800 hover:bg-rose-900 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xs transition">
+                        + Add New Suit / Product
                     </button>
                 </div>
 
-                <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+                <!-- Products Table -->
+                <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
                     <table class="w-full text-left text-xs border-collapse">
                         <thead class="bg-stone-50 border-b border-stone-200 font-bold text-stone-500 uppercase text-[10px]">
                             <tr>
-                                <th class="p-3">Outfit & Code</th>
+                                <th class="p-3">Outfit</th>
                                 <th class="p-3">Category</th>
                                 <th class="p-3">Price</th>
-                                <th class="p-3">Stock</th>
+                                <th class="p-3">Status</th>
                                 <th class="p-3 text-right">Actions</th>
                             </tr>
                         </thead>
@@ -99,67 +87,51 @@
                 </div>
             </section>
 
-            <!-- TAB 2: SETTINGS & BACKUP -->
-            <section id="tab-settings" class="tab-content hidden max-w-xl mx-auto space-y-4">
-                <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-xs">
-                    <h3 class="font-serif font-bold text-base text-stone-900 mb-3">Panipat Store Details</h3>
+            <!-- TAB 2: SETTINGS -->
+            <section id="tab-settings" class="tab-content hidden max-w-lg mx-auto">
+                <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-xs space-y-4">
+                    <h3 class="font-serif font-bold text-base text-stone-900">Panipat Store Details</h3>
                     <form id="settingsForm" class="space-y-3 text-xs">
                         <div>
                             <label class="font-bold text-stone-700 block mb-1">WhatsApp Number</label>
-                            <input type="text" id="settingPhone" placeholder="919518285233" required class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl font-mono">
-                        </div>
-                        <div>
-                            <label class="font-bold text-stone-700 block mb-1">Top Announcement Offer</label>
-                            <input type="text" id="settingAnnouncement" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
+                            <input type="text" id="settingPhone" placeholder="919518285233" required class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl font-mono">
                         </div>
                         <div>
                             <label class="font-bold text-stone-700 block mb-1">Boutique Address (Panipat)</label>
-                            <input type="text" id="settingAddress" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
+                            <input type="text" id="settingAddress" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl">
                         </div>
                         <div>
-                            <label class="font-bold text-stone-700 block mb-1">Admin Security PIN</label>
-                            <input type="text" id="settingAdminPin" placeholder="Chirag@12300" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl font-mono">
+                            <label class="font-bold text-stone-700 block mb-1">Change Admin PIN</label>
+                            <input type="password" id="settingAdminPin" placeholder="New PIN" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl">
                         </div>
                         <div class="pt-2 flex justify-between items-center">
-                            <span id="settingsSaveStatus" class="text-emerald-600 font-bold hidden">✓ Saved!</span>
-                            <button type="submit" class="bg-brand-rose text-white font-bold px-4 py-2 rounded-xl">Save Settings</button>
+                            <span id="settingsSaveStatus" class="text-emerald-600 font-bold hidden">✓ Settings saved!</span>
+                            <button type="submit" class="bg-rose-800 hover:bg-rose-900 text-white font-bold px-5 py-2.5 rounded-xl">Save Settings</button>
                         </div>
                     </form>
-                </div>
-
-                <div class="bg-white p-5 rounded-2xl border border-stone-200 flex justify-between items-center text-xs">
-                    <div>
-                        <h4 class="font-bold text-stone-900">Backup & Restore</h4>
-                        <p class="text-[11px] text-stone-500">Save catalog file to your laptop or restore.</p>
-                    </div>
-                    <div class="flex gap-2">
-                        <button onclick="exportStoreData()" class="bg-stone-800 text-white font-bold px-3 py-1.5 rounded-lg">Export JSON</button>
-                        <input type="file" id="importFileInput" accept=".json" class="hidden" onchange="importStoreData(event)">
-                        <button onclick="document.getElementById('importFileInput').click()" class="border border-stone-300 px-3 py-1.5 rounded-lg font-bold">Import</button>
-                    </div>
                 </div>
             </section>
 
         </main>
     </div>
 
-    <!-- Add / Edit Modal -->
+    <!-- Product Add/Edit Modal -->
     <div id="productModal" class="fixed inset-0 z-50 bg-black/60 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 shadow-2xl">
-            <div class="flex justify-between items-center pb-3 border-b border-stone-100 mb-3">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl">
+            <div class="flex justify-between items-center pb-3 border-b border-stone-100 mb-4">
                 <h3 id="modalTitle" class="font-serif font-bold text-base">Add New Suit</h3>
                 <button onclick="closeProductModal()" class="text-stone-400 text-lg">✕</button>
             </div>
             <form id="productForm" class="space-y-3 text-xs">
                 <input type="hidden" id="editProductId">
                 <div>
-                    <label class="font-bold text-stone-700 block mb-1">Title *</label>
-                    <input type="text" id="prodTitle" required placeholder="e.g. Crimson Embroidered Suit" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
+                    <label class="font-bold text-stone-700 block mb-1">Suit Title *</label>
+                    <input type="text" id="prodTitle" required placeholder="e.g. Royal Crimson Hand Embroidered Suit" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl">
                 </div>
-                <div class="grid grid-cols-2 gap-2">
+                <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="font-bold text-stone-700 block mb-1">Category *</label>
-                        <select id="prodCategory" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
+                        <select id="prodCategory" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl">
                             <option value="Designer Suits">Designer Suits</option>
                             <option value="Anarkali Sets">Anarkali Sets</option>
                             <option value="Festive Kurtis">Festive Kurtis</option>
@@ -169,31 +141,31 @@
                     </div>
                     <div>
                         <label class="font-bold text-stone-700 block mb-1">Badge</label>
-                        <input type="text" id="prodBadge" placeholder="e.g. Grand Opening Special" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
+                        <input type="text" id="prodBadge" placeholder="e.g. Best Seller" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl">
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-2">
+                <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="font-bold text-stone-700 block mb-1">MRP Price ₹ *</label>
-                        <input type="number" id="prodOriginalPrice" required placeholder="2999" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
+                        <input type="number" id="prodOriginalPrice" required placeholder="2999" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl">
                     </div>
                     <div>
-                        <label class="font-bold text-stone-700 block mb-1">Opening Sale Price ₹ *</label>
-                        <input type="number" id="prodSalePrice" required placeholder="2699" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
+                        <label class="font-bold text-stone-700 block mb-1">Sale Price ₹ *</label>
+                        <input type="number" id="prodSalePrice" required placeholder="2699" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl">
                     </div>
                 </div>
                 <div>
                     <label class="font-bold text-stone-700 block mb-1">Fabric & Work *</label>
-                    <input type="text" id="prodFabric" required placeholder="Pure Georgette with Zari & Sequence Handwork" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
+                    <input type="text" id="prodFabric" required placeholder="Pure Georgette with Zari & Sequence Work" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl">
                 </div>
                 <div>
-                    <label class="font-bold text-stone-700 block mb-1">Image (File Upload or URL) *</label>
-                    <input type="file" id="prodFileInput" accept="image/*" class="w-full text-[11px]" onchange="handleImageFileSelect(event)">
-                    <input type="url" id="prodImageUrl" placeholder="Or paste image URL" class="w-full p-2 mt-1 bg-stone-50 border border-stone-300 rounded-xl">
+                    <label class="font-bold text-stone-700 block mb-1">Product Photo *</label>
+                    <input type="file" id="prodFileInput" accept="image/*" class="w-full text-[11px] mb-1" onchange="handleImageFileSelect(event)">
+                    <input type="url" id="prodImageUrl" placeholder="Or paste image URL" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl">
                 </div>
-                <div class="pt-2 flex justify-end gap-2">
-                    <button type="button" onclick="closeProductModal()" class="px-4 py-2 border rounded-xl">Cancel</button>
-                    <button type="submit" class="bg-brand-rose text-white font-bold px-5 py-2 rounded-xl">Save Outfit</button>
+                <div class="pt-3 flex justify-end gap-2">
+                    <button type="button" onclick="closeProductModal()" class="px-4 py-2.5 border rounded-xl">Cancel</button>
+                    <button type="submit" class="bg-rose-800 hover:bg-rose-900 text-white font-bold px-5 py-2.5 rounded-xl">Save Product</button>
                 </div>
             </form>
         </div>
@@ -202,48 +174,65 @@
     <script src="../products.js"></script>
     <script>
         let currentUploadedImage = "";
-        const authGate = document.getElementById('authGate'), dashboardApp = document.getElementById('dashboardApp');
-        if (sessionStorage.getItem('ethnic_admin_auth') === 'true') { authGate.classList.add('hidden'); dashboardApp.classList.remove('hidden'); init(); }
+        const authGate = document.getElementById('authGate');
+        const dashboardApp = document.getElementById('dashboardApp');
+
+        if (sessionStorage.getItem('ethnic_admin_logged') === 'true') {
+            authGate.classList.add('hidden');
+            dashboardApp.classList.remove('hidden');
+            initDashboard();
+        }
 
         document.getElementById('authForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            const config = StoreDB.getConfig();
-            if (document.getElementById('pinInput').value.trim() === (config.adminPin || "Chirag@12300")) {
-                sessionStorage.setItem('ethnic_admin_auth', 'true');
+            const data = getStoreData();
+            const pin = document.getElementById('pinInput').value.trim();
+            const correctPin = data.adminPin || "Chirag@12300";
+
+            if (pin === correctPin) {
+                sessionStorage.setItem('ethnic_admin_logged', 'true');
                 authGate.classList.add('hidden');
                 dashboardApp.classList.remove('hidden');
-                init();
-            } else { document.getElementById('authError').classList.remove('hidden'); }
+                initDashboard();
+            } else {
+                document.getElementById('authError').classList.remove('hidden');
+            }
         });
 
-        function logoutAdmin() { sessionStorage.removeItem('ethnic_admin_auth'); location.reload(); }
-        function switchTab(id) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('bg-stone-100', 'font-bold'); el.classList.add('text-stone-600'); });
-            document.getElementById('tab-' + id).classList.remove('hidden');
-            document.querySelector(`[data-tab="${id}"]`).classList.add('bg-stone-100', 'font-bold');
+        function logoutAdmin() {
+            sessionStorage.removeItem('ethnic_admin_logged');
+            location.reload();
         }
 
-        function init() { renderTable(); populateSettings(); }
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('bg-stone-100', 'font-bold'); el.classList.add('text-stone-600'); });
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            document.querySelector(`[data-tab="${tabId}"]`).classList.add('bg-stone-100', 'font-bold');
+        }
 
-        function renderTable() {
-            const products = StoreDB.getProducts(), config = StoreDB.getConfig();
+        function initDashboard() {
+            renderAdminTable();
+            populateSettings();
+        }
+
+        function renderAdminTable() {
+            const data = getStoreData();
             const search = document.getElementById('adminSearch').value.toLowerCase();
-            const cat = document.getElementById('adminCategoryFilter').value;
-            const filtered = products.filter(p => (cat === "All" || p.category === cat) && (!search || p.title.toLowerCase().includes(search) || p.id.toLowerCase().includes(search)));
+            const filtered = data.products.filter(p => !search || p.title.toLowerCase().includes(search) || p.id.toLowerCase().includes(search));
 
             document.getElementById('adminProductsTableBody').innerHTML = filtered.map(p => `
                 <tr class="hover:bg-stone-50">
-                    <td class="p-3 flex items-center gap-2">
-                        <img src="${p.image}" class="w-9 h-11 object-cover rounded border">
-                        <div><strong class="block truncate max-w-xs">${p.title}</strong><span class="text-[10px] text-stone-400 font-mono">${p.id}</span></div>
+                    <td class="p-3 flex items-center gap-3">
+                        <img src="${p.image}" class="w-10 h-12 object-cover rounded border">
+                        <div><strong class="block">${p.title}</strong><span class="text-[10px] text-stone-400 font-mono">${p.id}</span></div>
                     </td>
                     <td class="p-3 text-stone-600">${p.category}</td>
-                    <td class="p-3"><strong class="text-brand-rose">${config.currency}${p.salePrice}</strong> <span class="text-stone-400 line-through text-[10px]">${config.currency}${p.originalPrice}</span></td>
-                    <td class="p-3"><button onclick="toggleStock('${p.id}')" class="px-2 py-0.5 rounded text-[10px] font-bold ${p.inStock ? 'bg-emerald-100 text-emerald-800' : 'bg-stone-200'}">${p.inStock ? 'In Stock' : 'Sold Out'}</button></td>
+                    <td class="p-3"><strong class="text-rose-800">₹${p.salePrice}</strong> <span class="text-stone-400 line-through text-[10px]">₹${p.originalPrice}</span></td>
+                    <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">In Stock</span></td>
                     <td class="p-3 text-right">
-                        <button onclick="editProduct('${p.id}')" class="text-blue-600 font-bold mr-2">Edit</button>
-                        <button onclick="deleteProduct('${p.id}')" class="text-red-600 font-bold">Delete</button>
+                        <button onclick="editProduct('${p.id}')" class="text-blue-600 font-bold mr-2 hover:underline">Edit</button>
+                        <button onclick="deleteProduct('${p.id}')" class="text-red-600 font-bold hover:underline">Delete</button>
                     </td>
                 </tr>
             `).join('');
@@ -264,13 +253,17 @@
             document.getElementById('productModal').classList.remove('hidden');
             document.getElementById('productModal').classList.add('flex');
         }
-        function closeProductModal() { document.getElementById('productModal').classList.add('hidden'); document.getElementById('productModal').classList.remove('flex'); }
+        function closeProductModal() {
+            document.getElementById('productModal').classList.add('hidden');
+            document.getElementById('productModal').classList.remove('flex');
+        }
 
         window.editProduct = function(id) {
-            const p = StoreDB.getProducts().find(i => i.id === id);
+            const data = getStoreData();
+            const p = data.products.find(i => i.id === id);
             if (!p) return;
             openProductModal(true);
-            document.getElementById('modalTitle').textContent = "Edit Outfit Details";
+            document.getElementById('modalTitle').textContent = "Edit Suit Details";
             document.getElementById('editProductId').value = p.id;
             document.getElementById('prodTitle').value = p.title;
             document.getElementById('prodCategory').value = p.category;
@@ -284,65 +277,58 @@
 
         document.getElementById('productForm').addEventListener('submit', (e) => {
             e.preventDefault();
+            const data = getStoreData();
             const editId = document.getElementById('editProductId').value;
-            const data = {
+            const itemData = {
                 title: document.getElementById('prodTitle').value.trim(),
                 category: document.getElementById('prodCategory').value,
-                badge: document.getElementById('prodBadge').value.trim(),
+                badge: document.getElementById('prodBadge').value.trim() || "10% OFF",
                 originalPrice: parseFloat(document.getElementById('prodOriginalPrice').value),
                 salePrice: parseFloat(document.getElementById('prodSalePrice').value),
                 fabric: document.getElementById('prodFabric').value.trim(),
                 image: currentUploadedImage || document.getElementById('prodImageUrl').value.trim() || "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop",
-                sizes: ["S", "M", "L", "XL", "Semi-Stitched"],
                 inStock: true
             };
-            if (editId) StoreDB.updateProduct(editId, data); else StoreDB.addProduct(data);
+
+            if (editId) {
+                const idx = data.products.findIndex(i => i.id === editId);
+                if (idx !== -1) data.products[idx] = { ...data.products[idx], ...itemData };
+            } else {
+                data.products.unshift({ id: 'EG-' + Math.floor(100 + Math.random() * 900), ...itemData });
+            }
+
+            saveStoreData(data);
             closeProductModal();
-            renderTable();
+            renderAdminTable();
         });
 
-        window.toggleStock = function(id) { const p = StoreDB.getProducts().find(i => i.id === id); if (p) { StoreDB.updateProduct(id, { inStock: !p.inStock }); renderTable(); } };
-        window.deleteProduct = function(id) { if (confirm("Delete this outfit?")) { StoreDB.deleteProduct(id); renderTable(); } };
+        window.deleteProduct = function(id) {
+            if (confirm("Are you sure you want to delete this outfit?")) {
+                const data = getStoreData();
+                data.products = data.products.filter(i => i.id !== id);
+                saveStoreData(data);
+                renderAdminTable();
+            }
+        };
 
         function populateSettings() {
-            const config = StoreDB.getConfig();
-            document.getElementById('settingPhone').value = config.phone;
-            document.getElementById('settingAnnouncement').value = config.announcement;
-            document.getElementById('settingAddress').value = config.address || "";
-            document.getElementById('settingAdminPin').value = config.adminPin || "Chirag@12300";
+            const data = getStoreData();
+            document.getElementById('settingPhone').value = data.phone || "919518285233";
+            document.getElementById('settingAddress').value = data.address || "";
         }
 
         document.getElementById('settingsForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            StoreDB.saveConfig({
-                phone: document.getElementById('settingPhone').value.replace(/[^0-9]/g, ''),
-                announcement: document.getElementById('settingAnnouncement').value.trim(),
-                address: document.getElementById('settingAddress').value.trim(),
-                adminPin: document.getElementById('settingAdminPin').value.trim() || "Chirag@12300"
-            });
-            const s = document.getElementById('settingsSaveStatus'); s.classList.remove('hidden'); setTimeout(() => s.classList.add('hidden'), 2500);
+            const data = getStoreData();
+            data.phone = document.getElementById('settingPhone').value.replace(/[^0-9]/g, '');
+            data.address = document.getElementById('settingAddress').value.trim();
+            const newPin = document.getElementById('settingAdminPin').value.trim();
+            if (newPin) data.adminPin = newPin;
+            saveStoreData(data);
+            const s = document.getElementById('settingsSaveStatus');
+            s.classList.remove('hidden');
+            setTimeout(() => s.classList.add('hidden'), 2000);
         });
-
-        window.exportStoreData = function() {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ config: StoreDB.getConfig(), products: StoreDB.getProducts() }, null, 2));
-            const a = document.createElement('a'); a.href = dataStr; a.download = `ethnic_grace_${new Date().toISOString().slice(0,10)}.json`; a.click();
-        };
-
-        window.importStoreData = function(e) {
-            const file = e.target.files[0];
-            if (!file) return;
-            const r = new FileReader();
-            r.onload = (evt) => {
-                try {
-                    const parsed = JSON.parse(evt.target.result);
-                    if (parsed.products) { StoreDB.saveProducts(parsed.products); if (parsed.config) StoreDB.saveConfig(parsed.config); alert("✓ Restored!"); init(); }
-                } catch(err) { alert("Invalid JSON file"); }
-            };
-            r.readAsText(file);
-        };
-
-        document.getElementById('adminSearch').addEventListener('input', renderTable);
-        document.getElementById('adminCategoryFilter').addEventListener('change', renderTable);
     </script>
 </body>
 </html>
