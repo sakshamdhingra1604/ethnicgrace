@@ -1,84 +1,76 @@
 /**
- * Ethnic Grace - Store Data Manager & Panipat Boutique Catalog
+ * Ethnic Grace - Store Data & WhatsApp Helpers
  */
-
 const DEFAULT_STORE_CONFIG = {
     storeName: "Ethnic Grace",
     tagline: "PREMIUM ETHNIC WEARS • PANIPAT",
-    phone: "919518285233", // Updated WhatsApp Number
+    phone: "919518285233", // WhatsApp Number
     announcement: "🎉 GRAND OPENING SALE: Flat 10% OFF on All New Arrivals | 📍 Visit our Boutique: Uttam Nagar, Devi Mandir Main Road, Panipat | Worldwide Shipping 📦",
     currency: "₹",
-    instagram: "https://instagram.com",
     address: "Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat - 132103",
-    adminPin: "Chirag@12300", // Updated Admin PIN
-    storeHighlights: [
-        "💫 Deals in premium ethnic wears",
-        "📦 Worldwide shipping available",
-        "📍 Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat - 132103",
-        "🛍️ In-Store Boutique Trial & Video Call Shopping"
-    ]
+    adminPin: "Chirag@12300"
 };
 
 const DEFAULT_PRODUCTS = [
     {
-        id: "eg-101",
-        title: "Panipat Boutique Special: Crimson Embroidered Anarkali Suit",
+        id: "EG-101",
+        title: "Panipat Special: Crimson Embroidered Anarkali Suit",
         category: "Anarkali Sets",
         fabric: "Pure Georgette with Heavy Zari & Sequence Handwork",
         originalPrice: 2999,
-        salePrice: 2699, // 10% Opening Sale
+        salePrice: 2699,
         badge: "Grand Opening Special",
         inStock: true,
         image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop",
         sizes: ["S", "M", "L", "XL", "Semi-Stitched"],
-        description: "Panipat boutique launch exclusive! Handcrafted zari work on rich crimson georgette with matching embroidered dupatta and bottom."
+        description: "Panipat boutique launch exclusive! Handcrafted zari work on georgette with matching dupatta. Visit store for trial."
     },
     {
-        id: "eg-102",
+        id: "EG-102",
         title: "New Arrival: Pastel Blush Pink Chanderi Silk Suit",
         category: "Designer Suits",
         fabric: "Pure Chanderi Silk with Thread Work & Scalloped Organza Dupatta",
         originalPrice: 1999,
-        salePrice: 1799, // 10% Opening Sale
+        salePrice: 1799,
         badge: "New Arrival",
         inStock: true,
         image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1000&auto=format&fit=crop",
         sizes: ["M", "L", "XL", "XXL", "Unstitched"],
-        description: "Lightweight, royal Chanderi silk with pastel floral thread work. Try in-store at our Panipat shop or order directly on WhatsApp."
+        description: "Lightweight royal Chanderi silk with pastel floral thread work. Try in-store at our Panipat shop."
     },
     {
-        id: "eg-103",
+        id: "EG-103",
         title: "Festive Ready: Mustard Gold Banarasi Brocade Kurti Set",
         category: "Festive Kurtis",
         fabric: "Banarasi Silk Brocade with Hand Zardozi Neckline",
         originalPrice: 1599,
-        salePrice: 1439, // 10% Opening Sale
+        salePrice: 1439,
         badge: "Hot Seller",
         inStock: true,
         image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
         sizes: ["S", "M", "L", "XL"],
-        description: "Vibrant festive kurti set with pant & chiffon dupatta. Perfect for pooja, family gatherings & weddings."
+        description: "Vibrant festive kurti set with pant & dupatta. Visit shop or inquire on WhatsApp."
     },
     {
-        id: "eg-104",
+        id: "EG-104",
         title: "Royal Velvet Heavy Embroidered Party Suit",
         category: "Designer Suits",
         fabric: "Micro Velvet 9000 with Intricate Tilla & Dori Work",
         originalPrice: 3499,
-        salePrice: 3149, // 10% Opening Sale
+        salePrice: 3149,
         badge: "Panipat Special",
         inStock: true,
         image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop",
         sizes: ["M", "L", "XL", "Semi-Stitched"],
-        description: "Ultra-luxury micro-velvet suit featuring royal tilla embroidery paired with a banarasi jacquard dupatta."
+        description: "Ultra-luxury micro-velvet suit featuring royal tilla embroidery paired with a banarasi dupatta."
     },
     {
-        id: "eg-105",
+        id: "EG-105",
         title: "Pure Handloom Lavender Kanjivaram Silk Saree",
         category: "Silk Sarees",
         fabric: "Pure Kanjivaram Silk with Rich Gold Zari Pallu",
         originalPrice: 3999,
-        salePrice: 3599, // 10% Opening Sale
+        salePrice: 3599,
         badge: "10% OFF Launch",
         inStock: true,
         image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
@@ -86,28 +78,26 @@ const DEFAULT_PRODUCTS = [
         description: "Authentic lavender Kanjivaram silk saree with traditional temple border and designer blouse piece."
     },
     {
-        id: "eg-106",
+        id: "EG-106",
         title: "Bridal Edition: Ivory & Champagne Heritage Lehenga",
         category: "Bridal Lehengas",
         fabric: "Raw Silk with Mirror Work, Pearls & Double Dupatta",
         originalPrice: 8999,
-        salePrice: 7999, // Opening Special
+        salePrice: 7999,
         badge: "Grand Opening Bridal",
         inStock: true,
         image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=1000&auto=format&fit=crop",
         sizes: ["Semi-Stitched (Up to 44 Bust)"],
-        description: "Stunning bridal lehenga in soft champagne ivory with real mirror work, massive flare and dual designer dupattas."
+        description: "Stunning bridal lehenga in soft champagne ivory with real mirror work. Book in-store trial at Panipat."
     }
 ];
 
-// Storage keys
 const STORAGE_KEYS = {
-    PRODUCTS: "ethnic_grace_products_v3",
-    CONFIG: "ethnic_grace_config_v3",
-    CART: "ethnic_grace_cart_v3"
+    PRODUCTS: "ethnic_grace_prod_v4",
+    CONFIG: "ethnic_grace_conf_v4",
+    CART: "ethnic_grace_bag_v4"
 };
 
-// Global Store API helper
 const StoreDB = {
     getConfig: function() {
         try {
@@ -131,9 +121,8 @@ const StoreDB = {
                 if (Array.isArray(parsed) && parsed.length > 0) return parsed;
             }
         } catch (e) {
-            console.error("Error reading products:", e);
+            console.error("Error loading products", e);
         }
-        // Initialize with default
         this.saveProducts(DEFAULT_PRODUCTS);
         return DEFAULT_PRODUCTS;
     },
@@ -146,7 +135,7 @@ const StoreDB = {
     addProduct: function(product) {
         const products = this.getProducts();
         const newProduct = {
-            id: 'eg-' + Date.now().toString().slice(-6),
+            id: 'EG-' + Math.floor(100 + Math.random() * 900),
             inStock: true,
             ...product
         };
@@ -177,35 +166,34 @@ const StoreDB = {
         this.saveConfig(DEFAULT_STORE_CONFIG);
     },
 
-    // WhatsApp Message Generator
-    getWhatsAppOrderUrl: function(product, selectedSize = null, customNote = "") {
+    // WhatsApp Message on clicking "Order Now / I am interested"
+    getWhatsAppOrderUrl: function(product, selectedSize = null) {
         const config = this.getConfig();
         const phone = config.phone.replace(/[^0-9]/g, '');
-        const sizeText = selectedSize ? `\n📏 *Selected Size:* ${selectedSize}` : '';
-        const noteText = customNote ? `\n📝 *Note:* ${customNote}` : '';
+        const sizeText = selectedSize ? `\n📏 *Size:* ${selectedSize}` : '';
         
         const message = 
 `🌸 *Namaste Ethnic Grace Panipat!* 🌸
-I saw this outfit on your website & want to order / visit store:
+Hello, I am interested in this outfit from your website:
 
 👗 *Product:* ${product.title}
-💰 *Opening Price:* ${config.currency}${product.salePrice.toLocaleString('en-IN')} (MRP: ~${config.currency}${product.originalPrice.toLocaleString('en-IN)}~)${sizeText}
+💰 *Offer Price:* ${config.currency}${product.salePrice.toLocaleString('en-IN')} (MRP: ~${config.currency}${product.originalPrice.toLocaleString('en-IN)}~)${sizeText}
 🧵 *Fabric:* ${product.fabric}
-🆔 *Code:* ${product.id}${noteText}
+🆔 *Item Code:* ${product.id}
 
-📍 *Store:* Plot no. 99 Uttam Nagar, Devi Mandir Main Road, Panipat
-Please share delivery details / store availability. Thank you!`;
+📍 *Store Visit / Shipping:*
+Please share store availability at Panipat (Plot no. 99, Devi Mandir Road) or shipping details. Thank you!`;
 
         return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     },
 
-    getGeneralWhatsAppUrl: function(customMsg = "") {
+    // WhatsApp direct Contact Us Link
+    getDirectWhatsAppUrl: function(customMsg = "") {
         const config = this.getConfig();
         const phone = config.phone.replace(/[^0-9]/g, '');
-        const text = customMsg || "Hello Ethnic Grace Panipat! I would like to check your latest designer suits collection and visit your shop at Devi Mandir Road.";
+        const text = customMsg || "Hello Ethnic Grace Panipat! I would like to contact you regarding your designer suits collection and visit your shop at Devi Mandir Main Road.";
         return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     }
 };
 
-// Export to window
 window.StoreDB = StoreDB;

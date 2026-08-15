@@ -3,226 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethnic Grace | Premium Designer Ladies Suits & Ethnic Wear - Panipat</title>
-    <meta name="description" content="Ethnic Grace Panipat: Deals in premium ethnic wears, designer suits, anarkalis, and lehengas. Worldwide shipping & visit our boutique at Devi Mandir Main Road, Panipat.">
-    
-    <!-- Google Fonts -->
+    <title>Ethnic Grace | Premium Designer Ladies Suits - Panipat</title>
+    <meta name="description" content="Ethnic Grace Panipat: Deals in premium ethnic wears, designer suits, anarkalis. Visit our boutique at Devi Mandir Main Road, Panipat or contact on WhatsApp.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#FDF8F7',
-                            100: '#F9ECE9',
-                            200: '#F2D7D1',
-                            300: '#E6B8AF',
-                            400: '#D59285',
-                            500: '#C07062',
-                            600: '#A75244',
-                            700: '#8C3D31',
-                            800: '#75342B',
-                            900: '#622E27',
-                            gold: '#C5A059',
-                            'gold-light': '#F0E6D2',
-                            rose: '#8E2344',
-                            'rose-dark': '#69152F',
-                            cream: '#FAF7F2'
-                        }
+                        brand: { 50: '#FDF8F7', 100: '#F9ECE9', 200: '#F2D7D1', rose: '#8E2344', 'rose-dark': '#69152F', gold: '#C5A059', cream: '#FAF7F2' }
                     },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-                        cormorant: ['"Cormorant Garamond"', 'serif']
-                    }
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] }
                 }
             }
         }
     </script>
-    
-    <style>
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #FAF7F2; }
-        ::-webkit-scrollbar-thumb { background: #D59285; border-radius: 4px; }
-        
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(12px);
-        }
-
-        .hero-pattern {
-            background-color: #FAF7F2;
-            background-image: radial-gradient(#d59285 0.5px, transparent 0.5px), radial-gradient(#d59285 0.5px, #FAF7F2 0.5px);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            display: inline-flex;
-            white-space: nowrap;
-            animation: marquee 25s linear infinite;
-        }
-    </style>
 </head>
-<body class="bg-brand-cream text-stone-800 font-sans antialiased selection:bg-brand-200 selection:text-brand-900">
+<body class="bg-brand-cream text-stone-800 font-sans antialiased">
 
-    <!-- Top Announcement Bar -->
-    <aside class="bg-gradient-to-r from-brand-rose via-brand-900 to-brand-rose text-white text-xs font-semibold py-2.5 px-4 text-center tracking-wide flex items-center justify-center gap-2 shadow-inner overflow-hidden">
-        <span id="announcementText">🎉 GRAND OPENING CELEBRATION: Flat 10% OFF on All New Arrivals | 📍 Visit our Boutique in Panipat | Worldwide Shipping 📦</span>
+    <!-- Announcement Bar -->
+    <aside class="bg-brand-rose text-white text-xs font-semibold py-2.5 px-4 text-center tracking-wide">
+        <span id="announcementText">🎉 GRAND OPENING SALE: Flat 10% OFF on All New Arrivals | 📍 Visit our Boutique: Uttam Nagar, Devi Mandir Main Road, Panipat | Worldwide Shipping 📦</span>
     </aside>
 
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 z-40 glass-nav border-b border-stone-200/80 shadow-xs transition-all duration-300">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
-                <!-- Mobile Search Trigger -->
-                <div class="flex items-center gap-2 lg:hidden">
-                    <button id="mobileSearchToggle" class="p-2 text-stone-600 hover:text-brand-rose focus:outline-none" aria-label="Search">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </button>
-                </div>
-
-                <!-- Brand Logo (Inspired by custom emblem) -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-full border-2 border-brand-gold/70 bg-brand-50 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 overflow-hidden relative">
-                        <span class="font-serif text-xl font-bold text-brand-rose tracking-tighter">EG</span>
-                        <div class="absolute inset-0 border border-brand-300 rounded-full scale-90"></div>
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-full border-2 border-brand-gold bg-brand-50 flex items-center justify-center shadow-xs">
+                        <span class="font-serif text-lg font-bold text-brand-rose">EG</span>
                     </div>
-                    <div class="text-left">
-                        <div class="flex items-center gap-2">
-                            <h1 class="font-serif text-xl sm:text-2xl font-bold tracking-widest text-brand-rose uppercase leading-none">Ethnic Grace</h1>
-                            <span class="bg-amber-100 text-amber-900 text-[9px] font-extrabold px-1.5 py-0.5 rounded border border-amber-300">PANIPAT</span>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <h1 class="font-serif text-xl sm:text-2xl font-bold tracking-widest text-brand-rose uppercase">Ethnic Grace</h1>
+                            <span class="bg-amber-100 text-amber-900 text-[9px] font-extrabold px-1.5 py-0.5 rounded">PANIPAT</span>
                         </div>
-                        <span class="text-[10px] sm:text-xs font-semibold tracking-[0.25em] text-brand-600 block uppercase mt-0.5">✦ Premium Ethnic Wears ✦</span>
+                        <span class="text-[10px] font-semibold tracking-[0.2em] text-stone-500 uppercase block">✦ Deals in Premium Ethnic Wears ✦</span>
                     </div>
                 </a>
 
-                <!-- Desktop Search Bar -->
-                <div class="hidden md:flex flex-1 max-w-md mx-8">
-                    <div class="relative w-full">
-                        <input type="text" id="searchInput" placeholder="Search suits, anarkalis, fabric (Georgette, Silk)..." 
-                            class="w-full bg-stone-100/90 border border-stone-200 rounded-full py-2.5 pl-10 pr-4 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-500 transition-all">
-                        <svg class="w-4 h-4 text-stone-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
+                <!-- Desktop Search -->
+                <div class="hidden md:flex flex-1 max-w-sm mx-6">
+                    <input type="text" id="searchInput" placeholder="Search suits, anarkalis, fabric (Georgette, Silk)..." 
+                        class="w-full bg-stone-100 border border-stone-200 rounded-full py-2 px-4 text-xs focus:ring-2 focus:ring-brand-rose focus:outline-none">
                 </div>
 
-                <!-- Action Buttons -->
-                <div class="flex items-center gap-2.5 sm:gap-3">
-                    <!-- Visit Store Pill -->
-                    <a href="#visitStore" class="hidden lg:inline-flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold px-3.5 py-2 rounded-full transition shadow-2xs">
+                <!-- Actions -->
+                <div class="flex items-center gap-2.5">
+                    <a href="#visitStore" class="hidden sm:inline-flex items-center gap-1 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold px-3 py-2 rounded-full transition">
                         <span>📍 Visit Shop</span>
                     </a>
 
-                    <!-- WhatsApp Contact Button -->
-                    <a id="headerWhatsAppBtn" href="#" target="_blank" class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3.5 sm:px-4 py-2.5 rounded-full shadow-sm hover:shadow transition-all duration-200">
+                    <!-- Direct WhatsApp Contact Us Button -->
+                    <a id="headerWhatsAppBtn" href="#" target="_blank" class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3.5 sm:px-4 py-2 rounded-full shadow-xs transition">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        <span>+91 95182 85233</span>
+                        <span>Contact Us</span>
                     </a>
 
-                    <!-- Cart Drawer Trigger -->
-                    <button id="cartDrawerBtn" class="relative p-2.5 text-stone-700 hover:text-brand-rose bg-stone-100 hover:bg-brand-50 rounded-full transition-colors" aria-label="Shopping Bag">
+                    <!-- Cart -->
+                    <button id="cartDrawerBtn" class="relative p-2 text-stone-700 hover:text-brand-rose bg-stone-100 rounded-full" aria-label="Bag">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                        <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-brand-rose text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center scale-0 transition-transform">0</span>
+                        <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-brand-rose text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center scale-0 transition-transform">0</span>
                     </button>
 
-                    <!-- Admin Portal Shortcut -->
-                    <a href="admin/index.html" class="inline-flex items-center gap-1 text-xs text-stone-500 hover:text-brand-rose px-2.5 py-2 rounded-lg border border-stone-200 hover:border-brand-300 transition-colors font-medium">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        <span class="hidden sm:inline">Admin</span>
-                    </a>
+                    <a href="admin/index.html" class="text-xs text-stone-400 hover:text-brand-rose border border-stone-200 px-2 py-1.5 rounded-lg">Admin</a>
                 </div>
-
-            </div>
-
-            <!-- Mobile Search Bar Dropdown -->
-            <div id="mobileSearchBar" class="hidden pb-4 md:hidden">
-                <input type="text" id="mobileSearchInput" placeholder="Search suits, fabric, colors..." 
-                    class="w-full bg-stone-100 border border-stone-200 rounded-full py-2.5 px-4 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500/30">
             </div>
         </div>
     </header>
 
-    <!-- Luxury Hero Section with Panipat Local Grand Opening Touch -->
-    <section class="relative overflow-hidden hero-pattern border-b border-brand-200/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <!-- Hero Section -->
+    <section class="border-b border-brand-200/60 bg-gradient-to-b from-brand-50 to-brand-cream py-10 md:py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
-                <!-- Hero Content -->
                 <div class="lg:col-span-7 text-center lg:text-left">
-                    
-                    <!-- Grand Opening Tag -->
-                    <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 bg-rose-50 border border-brand-rose/30 px-4 py-1.5 rounded-full mb-6 shadow-xs">
-                        <span class="w-2.5 h-2.5 rounded-full bg-brand-rose animate-ping"></span>
-                        <span class="text-xs font-bold uppercase tracking-wider text-brand-rose">🎉 Grand Opening • Panipat Boutique</span>
-                        <span class="text-[10px] bg-brand-rose text-white font-extrabold px-2 py-0.5 rounded-full">FLAT 10% OFF</span>
+                    <div class="inline-flex items-center gap-2 bg-rose-50 border border-brand-rose/30 px-3.5 py-1 rounded-full mb-4">
+                        <span class="w-2 h-2 rounded-full bg-brand-rose animate-ping"></span>
+                        <span class="text-xs font-bold text-brand-rose uppercase">🎉 Grand Opening • Flat 10% OFF</span>
                     </div>
 
-                    <h2 class="font-serif text-3xl sm:text-5xl lg:text-6xl text-brand-900 font-bold leading-tight mb-5">
-                        Panipat’s New Home of <br class="hidden sm:inline">
-                        <span class="text-brand-rose italic font-cormorant font-normal">Designer Ethnic Fashion.</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-brand-900 font-bold leading-tight mb-4">
+                        Panipat’s New Boutique for <br>
+                        <span class="text-brand-rose italic font-normal">Designer Ethnic Suits.</span>
                     </h2>
 
-                    <p class="text-stone-600 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 mb-6 leading-relaxed">
-                        💫 <strong>Deals in premium ethnic wears</strong> — hand-embroidered designer suits, anarkalis, festive kurtis & royal bridal lehengas. Experience boutique luxury in-store at Panipat or order online with worldwide shipping!
+                    <p class="text-stone-600 text-sm max-w-xl mx-auto lg:mx-0 mb-6 leading-relaxed">
+                        💫 <strong>Deals in premium ethnic wears</strong> • Handcrafted designer suits, anarkalis, festive kurtis & lehengas. Visit our new shop in Panipat for trial fittings or contact us on WhatsApp!
                     </p>
 
-                    <!-- Panipat Store Location Badge -->
-                    <div class="bg-white/90 backdrop-blur-sm p-4 rounded-2xl border border-brand-200 shadow-sm max-w-lg mx-auto lg:mx-0 mb-8 text-left flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-lg shrink-0 mt-0.5">
-                            📍
-                        </div>
+                    <!-- Panipat Store Location Card -->
+                    <div class="bg-white p-4 rounded-2xl border border-brand-200 shadow-xs max-w-lg mx-auto lg:mx-0 mb-6 text-left flex items-start gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-base shrink-0">📍</div>
                         <div>
-                            <span class="text-[11px] font-bold text-brand-rose uppercase tracking-wider">Visit Our Boutique</span>
+                            <span class="text-[10px] font-bold text-brand-rose uppercase tracking-wider">Visit Our Boutique</span>
                             <h4 class="text-xs sm:text-sm font-bold text-stone-900">Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat - 132103</h4>
-                            <div class="flex items-center gap-3 mt-1.5 text-[11px] text-stone-500 font-medium">
-                                <span class="text-emerald-700 font-bold">📦 Worldwide Shipping</span>
-                                <span>•</span>
-                                <span>👗 Live Video Selection</span>
-                            </div>
+                            <p class="text-[11px] text-stone-500 mt-0.5">📦 Worldwide Shipping Available • In-Store Trial</p>
                         </div>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
-                        <a href="#catalog" class="w-full sm:w-auto bg-brand-rose hover:bg-brand-rose-dark text-white font-bold px-7 py-3.5 rounded-full shadow-lg shadow-brand-rose/25 transition duration-300 text-center flex items-center justify-center gap-2 text-sm">
-                            <span>Shop Opening 10% OFF Sale</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
+                        <a href="#catalog" class="w-full sm:w-auto bg-brand-rose hover:bg-brand-rose-dark text-white font-bold px-6 py-3 rounded-full text-xs transition text-center shadow-md">
+                            Shop 10% OFF Opening Sale
                         </a>
-                        
-                        <a id="heroCustomOrderBtn" href="#" target="_blank" class="w-full sm:w-auto bg-white hover:bg-stone-50 border border-stone-300 text-stone-800 font-bold px-6 py-3.5 rounded-full transition duration-300 text-center flex items-center justify-center gap-2 shadow-xs text-sm">
-                            <span class="text-emerald-600 text-lg">💬</span>
-                            <span>WhatsApp: 95182 85233</span>
+                        <a id="heroWhatsAppDirectBtn" href="#" target="_blank" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-full text-xs transition text-center flex items-center justify-center gap-1.5 shadow-xs">
+                            <span>💬 Contact Us: 95182 85233</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Hero Visual Showcase -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md">
-                        <div class="absolute -inset-2 bg-gradient-to-tr from-brand-300 to-amber-200 rounded-3xl opacity-50 blur-lg"></div>
-                        <div class="relative bg-white p-3 rounded-2xl shadow-2xl border border-stone-100">
-                            <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop" 
-                                alt="Ethnic Grace Panipat Collection" class="rounded-xl w-full h-[380px] object-cover object-top">
-                            <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg border border-stone-100 flex items-center justify-between">
-                                <div>
-                                    <span class="text-[10px] font-bold tracking-widest text-brand-rose uppercase">Panipat Launch Star</span>
-                                    <h4 class="font-serif font-bold text-stone-800 text-sm">Crimson Embroidered Suit</h4>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-xs text-stone-400 line-through">₹2,999</span>
-                                    <span class="font-bold text-brand-rose text-base ml-1">₹2,699</span>
-                                    <span class="text-[10px] block font-bold text-emerald-700">10% OFF</span>
-                                </div>
+                <div class="lg:col-span-5 relative max-w-md mx-auto">
+                    <div class="bg-white p-2.5 rounded-2xl shadow-xl border border-stone-200">
+                        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop" 
+                            alt="Panipat Collection" class="rounded-xl w-full h-[340px] object-cover object-top">
+                        <div class="p-3 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold text-brand-rose uppercase">Grand Opening Star</span>
+                                <h4 class="font-serif font-bold text-xs text-stone-900">Crimson Embroidered Suit</h4>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-stone-400 line-through">₹2,999</span>
+                                <span class="font-bold text-brand-rose text-sm ml-1">₹2,699</span>
                             </div>
                         </div>
                     </div>
@@ -232,302 +139,117 @@
         </div>
     </section>
 
-    <!-- 4 Key Highlights Bar -->
-    <section class="bg-white border-b border-stone-200/80 py-4 shadow-2xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center sm:text-left">
-                <div class="flex items-center justify-center sm:justify-start gap-3 p-2">
-                    <span class="text-2xl">💫</span>
-                    <div>
-                        <h5 class="text-xs font-bold text-stone-900">Deals in Premium Ethnic Wears</h5>
-                        <p class="text-[11px] text-stone-500">Designer suits & couture</p>
-                    </div>
-                </div>
-                <div class="flex items-center justify-center sm:justify-start gap-3 p-2 border-l-0 sm:border-l border-stone-200">
-                    <span class="text-2xl">📦</span>
-                    <div>
-                        <h5 class="text-xs font-bold text-stone-900">Worldwide Shipping</h5>
-                        <p class="text-[11px] text-stone-500">Fast & insured delivery</p>
-                    </div>
-                </div>
-                <div class="flex items-center justify-center sm:justify-start gap-3 p-2 border-l-0 md:border-l border-stone-200">
-                    <span class="text-2xl">📍</span>
-                    <div>
-                        <h5 class="text-xs font-bold text-stone-900">Devi Mandir Road, Panipat</h5>
-                        <p class="text-[11px] text-stone-500">Plot no. 99, Uttam Nagar</p>
-                    </div>
-                </div>
-                <div class="flex items-center justify-center sm:justify-start gap-3 p-2 border-l-0 sm:border-l border-stone-200">
-                    <span class="text-2xl">🎉</span>
-                    <div>
-                        <h5 class="text-xs font-bold text-brand-rose">Flat 10% Opening Sale</h5>
-                        <p class="text-[11px] text-stone-500">On all new arrival suits</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Highlights Strip -->
+    <section class="bg-white border-b border-stone-200 py-3 text-xs">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-center sm:text-left">
+            <div class="p-1">💫 <strong>Premium Ethnic Wears</strong></div>
+            <div class="p-1 border-l-0 sm:border-l border-stone-200">📦 <strong>Worldwide Shipping</strong></div>
+            <div class="p-1 border-l-0 md:border-l border-stone-200">📍 <strong>Devi Mandir Road, Panipat</strong></div>
+            <div class="p-1 border-l-0 sm:border-l border-stone-200 text-brand-rose">🎉 <strong>Flat 10% Opening Sale</strong></div>
         </div>
     </section>
 
-    <!-- Category Filter Bar -->
-    <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+    <!-- Catalog & Category Filter -->
+    <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
             <div>
-                <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-brand-600 mb-1">
-                    <span>✦ NEW ARRIVALS & GRAND OPENING SPECIALS ✦</span>
-                </div>
-                <h3 class="font-serif text-2xl sm:text-4xl font-bold text-stone-900">Exclusive Boutique Catalog</h3>
+                <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">✦ NEW ARRIVALS & GRAND OPENING ✦</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Panipat Boutique Catalog</h3>
             </div>
-            
-            <div class="flex items-center justify-between md:justify-end gap-3 text-xs sm:text-sm text-stone-500">
-                <span id="productCountLabel">Showing all products</span>
-            </div>
+            <span id="productCountLabel" class="text-xs text-stone-500">Showing all outfits</span>
         </div>
 
-        <!-- Filter Chips Carousel -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar border-b border-stone-200/60" id="categoryChips">
-            <button class="cat-pill active-pill whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-bold bg-brand-rose text-white shadow-sm transition-all" data-category="All">
-                ✨ All Outfits (10% OFF)
-            </button>
-            <button class="cat-pill whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-semibold bg-white text-stone-700 hover:bg-brand-50 border border-stone-200 transition-all" data-category="Designer Suits">
-                👗 Designer Suits
-            </button>
-            <button class="cat-pill whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-semibold bg-white text-stone-700 hover:bg-brand-50 border border-stone-200 transition-all" data-category="Anarkali Sets">
-                ✨ Anarkali Sets
-            </button>
-            <button class="cat-pill whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-semibold bg-white text-stone-700 hover:bg-brand-50 border border-stone-200 transition-all" data-category="Festive Kurtis">
-                🌸 Festive Kurtis
-            </button>
-            <button class="cat-pill whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-semibold bg-white text-stone-700 hover:bg-brand-50 border border-stone-200 transition-all" data-category="Silk Sarees">
-                🥻 Silk Sarees
-            </button>
-            <button class="cat-pill whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-semibold bg-white text-stone-700 hover:bg-brand-50 border border-stone-200 transition-all" data-category="Bridal Lehengas">
-                👑 Bridal Lehengas
-            </button>
+        <div class="flex items-center gap-2 overflow-x-auto pb-3 no-scrollbar border-b border-stone-200" id="categoryChips">
+            <button class="cat-pill active-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold bg-brand-rose text-white shadow-xs" data-category="All">✨ All Outfits (10% OFF)</button>
+            <button class="cat-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium bg-white text-stone-700 border border-stone-200" data-category="Designer Suits">👗 Designer Suits</button>
+            <button class="cat-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium bg-white text-stone-700 border border-stone-200" data-category="Anarkali Sets">✨ Anarkali Sets</button>
+            <button class="cat-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium bg-white text-stone-700 border border-stone-200" data-category="Festive Kurtis">🌸 Festive Kurtis</button>
+            <button class="cat-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium bg-white text-stone-700 border border-stone-200" data-category="Silk Sarees">🥻 Silk Sarees</button>
+            <button class="cat-pill whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium bg-white text-stone-700 border border-stone-200" data-category="Bridal Lehengas">👑 Bridal Lehengas</button>
         </div>
     </section>
 
     <!-- Product Grid -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
-            <!-- Dynamic products injected here by Javascript -->
-        </div>
-
-        <!-- Empty State -->
-        <div id="emptyCatalogState" class="hidden text-center py-20 bg-white rounded-2xl border border-dashed border-stone-300 max-w-lg mx-auto my-8 p-8">
-            <div class="w-16 h-16 mx-auto mb-4 bg-brand-50 rounded-full flex items-center justify-center text-2xl">🔍</div>
-            <h4 class="font-serif text-xl font-bold text-stone-800 mb-2">No Matching Outfits Found</h4>
-            <p class="text-sm text-stone-500 mb-6">Try searching for a different keyword or reset the category filter.</p>
-            <button onclick="resetFilters()" class="bg-brand-rose text-white text-xs font-semibold px-6 py-2.5 rounded-full">View All Items</button>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <div id="emptyCatalogState" class="hidden text-center py-16 bg-white rounded-2xl border border-dashed border-stone-300 max-w-md mx-auto my-6 p-6">
+            <h4 class="font-serif text-lg font-bold text-stone-800 mb-2">No Matching Outfits</h4>
+            <button onclick="resetFilters()" class="bg-brand-rose text-white text-xs font-bold px-4 py-2 rounded-full">Reset Filter</button>
         </div>
     </section>
 
-    <!-- Visit Boutique in Panipat Section -->
-    <section id="visitStore" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                <div class="lg:col-span-8">
-                    <span class="bg-brand-rose text-white text-[11px] font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider">
-                        📍 Panipat Store Visit
-                    </span>
-                    <h3 class="font-serif text-2xl sm:text-4xl font-bold text-white mt-3 mb-2">
-                        Visit Ethnic Grace Boutique in Panipat
-                    </h3>
-                    <p class="text-stone-300 text-sm sm:text-base mb-6 leading-relaxed">
-                        Experience the fabric touch, trial fittings, and customize your wedding trousseau in person at our brand new Panipat showroom.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                        <div class="bg-stone-800/80 p-4 rounded-xl border border-stone-700">
-                            <span class="text-amber-400 font-bold block text-sm mb-1">📍 Boutique Address</span>
-                            <p class="text-stone-300 leading-relaxed font-medium">Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat - 132103</p>
-                        </div>
-                        <div class="bg-stone-800/80 p-4 rounded-xl border border-stone-700">
-                            <span class="text-emerald-400 font-bold block text-sm mb-1">📞 Direct Phone & WhatsApp</span>
-                            <p class="text-stone-300 font-mono font-bold text-sm">+91 95182 85233</p>
-                            <span class="text-[10px] text-stone-400 block mt-1">Open 7 Days a Week • 10:30 AM to 8:30 PM</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-4 text-center lg:text-right">
-                    <a id="visitStoreWhatsApp" href="#" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-2xl shadow-xl transition transform hover:scale-105 text-sm">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        <span>WhatsApp for Directions</span>
-                    </a>
-                </div>
+    <!-- Visit Boutique Card -->
+    <section id="visitStore" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-stone-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="bg-brand-rose text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">📍 Panipat Boutique</span>
+                <h3 class="font-serif text-2xl font-bold text-white mt-2 mb-1">Visit Ethnic Grace in Panipat</h3>
+                <p class="text-stone-300 text-xs sm:text-sm max-w-xl">
+                    Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat - 132103<br>
+                    Try before you buy, explore unstitched & stitched fabrics in person!
+                </p>
             </div>
-        </div>
-    </section>
-
-    <!-- Customer Reviews -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="text-center max-w-xl mx-auto mb-8">
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Panipat Boutique Customer Love</span>
-            <h3 class="font-serif text-3xl font-bold text-stone-900 mt-1">What Ladies Say</h3>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200/70">
-                <div class="flex text-amber-400 mb-3">★★★★★</div>
-                <p class="text-stone-600 text-sm italic mb-4">"Visited their shop on Devi Mandir road in Panipat. The suit collection and fabric quality is absolutely unmatched! Got 10% opening discount too."</p>
-                <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-brand-200 text-brand-900 font-bold flex items-center justify-center text-xs">SM</div>
-                    <div>
-                        <h5 class="text-xs font-bold text-stone-900">Simran Manchanda</h5>
-                        <span class="text-[10px] text-stone-400">Panipat • In-Store Buyer</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200/70">
-                <div class="flex text-amber-400 mb-3">★★★★★</div>
-                <p class="text-stone-600 text-sm italic mb-4">"Ordered on WhatsApp from Canada via worldwide shipping! The video call selection was super smooth and delivery was on time."</p>
-                <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-brand-200 text-brand-900 font-bold flex items-center justify-center text-xs">NG</div>
-                    <div>
-                        <h5 class="text-xs font-bold text-stone-900">Navjot Gill</h5>
-                        <span class="text-[10px] text-stone-400">Toronto • Worldwide Shipping</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200/70">
-                <div class="flex text-amber-400 mb-3">★★★★★</div>
-                <p class="text-stone-600 text-sm italic mb-4">"Such lovely designer suits at honest prices. Hand embroidery and finishing looks like high-end boutique designer wear."</p>
-                <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-brand-200 text-brand-900 font-bold flex items-center justify-center text-xs">RK</div>
-                    <div>
-                        <h5 class="text-xs font-bold text-stone-900">Rachna Khattar</h5>
-                        <span class="text-[10px] text-stone-400">Panipat • Verified Buyer</span>
-                    </div>
-                </div>
-            </div>
+            <a id="visitStoreWhatsApp" href="#" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-6 py-3.5 rounded-xl transition whitespace-nowrap flex items-center gap-2">
+                <span>💬 WhatsApp for Directions & Timings</span>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-stone-900 text-stone-300 pt-16 pb-10 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
-                
-                <div class="md:col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-rose flex items-center justify-center text-white font-serif font-bold text-lg">EG</div>
-                        <div>
-                            <h4 class="font-serif text-xl font-bold tracking-wider text-white">ETHNIC GRACE</h4>
-                            <span class="text-[10px] tracking-widest text-brand-300 block uppercase">PREMIUM ETHNIC WEARS • PANIPAT</span>
-                        </div>
-                    </div>
-                    <p class="text-xs text-stone-400 max-w-sm leading-relaxed mb-4">
-                        💫 Deals in premium ethnic wears<br>
-                        📦 Worldwide shipping available<br>
-                        📍 Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat - 132103
-                    </p>
-                    <p class="text-xs text-emerald-400 font-mono font-bold">
-                        💬 WhatsApp / Phone: +91 95182 85233
-                    </p>
-                </div>
-
-                <div>
-                    <h5 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Collections</h5>
-                    <ul class="text-xs space-y-2.5 text-stone-400">
-                        <li><a href="#catalog" class="hover:text-brand-300 transition-colors">Panipat Designer Suits</a></li>
-                        <li><a href="#catalog" class="hover:text-brand-300 transition-colors">Anarkali Gowns</a></li>
-                        <li><a href="#catalog" class="hover:text-brand-300 transition-colors">Silk Sarees & Lehengas</a></li>
-                        <li><a id="footerWhatsAppLink" href="#" target="_blank" class="hover:text-brand-300 transition-colors">WhatsApp Order (95182 85233)</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Shop Owner Portal</h5>
-                    <p class="text-xs text-stone-400 mb-3">Manage products, upload new photos, change prices & PIN.</p>
-                    <a href="admin/index.html" class="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-brand-200 border border-stone-700 text-xs px-4 py-2.5 rounded-lg transition-colors font-medium">
-                        <span>🔐</span>
-                        <span>Open Admin Dashboard</span>
-                    </a>
-                </div>
-
+    <footer class="bg-stone-900 text-stone-400 text-xs py-10 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <h4 class="font-serif text-base font-bold text-white uppercase tracking-wider">Ethnic Grace Panipat</h4>
+                <p class="text-stone-400 mt-1">Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat - 132103 | WhatsApp: +91 95182 85233</p>
             </div>
-
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
-                <p>© 2026 Ethnic Grace Panipat. All Rights Reserved.</p>
-                <p class="flex items-center gap-4">
-                    <span>Worldwide Shipping 📦</span>
-                    <span>•</span>
-                    <a href="admin/index.html" class="hover:underline">Admin (Chirag@12300)</a>
-                </p>
+            <div class="flex items-center gap-4">
+                <a id="footerWhatsAppLink" href="#" target="_blank" class="text-emerald-400 hover:underline">Contact Us on WhatsApp</a>
+                <span>•</span>
+                <a href="admin/index.html" class="hover:text-white">Admin Login (Chirag@12300)</a>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Sticky WhatsApp Button -->
-    <a id="floatingWhatsAppBtn" href="#" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-transform hover:scale-105 group border-2 border-white" aria-label="Chat on WhatsApp">
-        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-        <span class="hidden sm:inline font-bold text-sm">Order: 95182 85233</span>
+    <!-- Floating Direct WhatsApp Contact Us Button -->
+    <a id="floatingWhatsAppBtn" href="#" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl flex items-center gap-2 transition hover:scale-105 border-2 border-white" aria-label="Contact on WhatsApp">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span class="hidden sm:inline font-bold text-xs">Contact Us</span>
     </a>
 
     <!-- Quick View Modal -->
-    <div id="quickViewModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity">
-        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative border border-stone-100" id="quickViewContent">
-            <!-- Injected via JavaScript -->
-        </div>
+    <div id="quickViewModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative p-6" id="quickViewContent"></div>
     </div>
 
-    <!-- Shopping Bag Slide-Over Drawer -->
-    <div id="cartDrawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs hidden justify-end">
-        <div class="bg-white w-full max-w-md h-full flex flex-col shadow-2xl border-l border-stone-200">
-            <div class="p-5 border-b border-stone-200 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <span class="text-xl">🛍️</span>
-                    <h3 class="font-serif text-lg font-bold text-stone-900">Your Panipat Bag Selection</h3>
-                </div>
-                <button id="closeCartDrawerBtn" class="text-stone-400 hover:text-stone-700 p-1.5 rounded-full hover:bg-stone-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
+    <!-- Bag Slide-Over Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 bg-black/50 hidden justify-end">
+        <div class="bg-white w-full max-w-sm h-full flex flex-col shadow-2xl">
+            <div class="p-4 border-b border-stone-200 flex items-center justify-between">
+                <h3 class="font-serif font-bold text-sm">🛍️ Selection Bag</h3>
+                <button onclick="closeCart()" class="text-stone-400 hover:text-stone-800 text-lg">✕</button>
             </div>
-
-            <div id="cartItemsList" class="flex-1 overflow-y-auto p-5 space-y-4"></div>
-
-            <div class="p-5 border-t border-stone-200 bg-stone-50 space-y-3">
-                <div class="flex items-center justify-between text-sm">
-                    <span class="text-stone-500">Subtotal Estimated</span>
-                    <span id="cartSubtotal" class="font-bold text-brand-rose text-lg">₹0</span>
-                </div>
-                <p class="text-[11px] text-stone-400">✨ Includes 10% Opening Discount & Worldwide Delivery Support.</p>
-                <a id="cartWhatsAppCheckoutBtn" href="#" target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl text-center shadow-lg shadow-emerald-600/20 transition duration-200 flex items-center justify-center gap-2">
-                    <span>💬</span>
-                    <span>Send Order to +91 95182 85233</span>
+            <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+            <div class="p-4 border-t border-stone-200 bg-stone-50 space-y-2.5">
+                <div class="flex justify-between text-xs font-bold"><span>Total Estimated</span><span id="cartSubtotal" class="text-brand-rose text-base">₹0</span></div>
+                <a id="cartWhatsAppCheckoutBtn" href="#" target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 text-center rounded-xl text-xs">
+                    💬 Inquire Bag on WhatsApp
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="products.js"></script>
     <script>
-        // State
-        let currentCategory = "All";
-        let searchQuery = "";
-        let cartItems = [];
-
-        try {
-            const savedCart = localStorage.getItem(STORAGE_KEYS.CART);
-            if (savedCart) cartItems = JSON.parse(savedCart);
-        } catch (e) {}
+        let currentCategory = "All", searchQuery = "", cartItems = [];
+        try { const c = localStorage.getItem(STORAGE_KEYS.CART); if (c) cartItems = JSON.parse(c); } catch(e){}
 
         const productGrid = document.getElementById('productGrid');
         const emptyCatalogState = document.getElementById('emptyCatalogState');
-        const productCountLabel = document.getElementById('productCountLabel');
         const searchInput = document.getElementById('searchInput');
-        const mobileSearchInput = document.getElementById('mobileSearchInput');
-        const mobileSearchToggle = document.getElementById('mobileSearchToggle');
-        const mobileSearchBar = document.getElementById('mobileSearchBar');
         const categoryChips = document.getElementById('categoryChips');
         const quickViewModal = document.getElementById('quickViewModal');
         const quickViewContent = document.getElementById('quickViewContent');
         const cartDrawer = document.getElementById('cartDrawer');
-        const cartDrawerBtn = document.getElementById('cartDrawerBtn');
-        const closeCartDrawerBtn = document.getElementById('closeCartDrawerBtn');
         const cartItemsList = document.getElementById('cartItemsList');
         const cartSubtotal = document.getElementById('cartSubtotal');
         const cartCountBadge = document.getElementById('cartCountBadge');
@@ -536,100 +258,64 @@
         function applyStoreConfig() {
             const config = StoreDB.getConfig();
             document.getElementById('announcementText').textContent = config.announcement;
-            document.getElementById('headerWhatsAppBtn').href = StoreDB.getGeneralWhatsAppUrl();
-            document.getElementById('floatingWhatsAppBtn').href = StoreDB.getGeneralWhatsAppUrl();
-            document.getElementById('heroCustomOrderBtn').href = StoreDB.getGeneralWhatsAppUrl("Hello Ethnic Grace Panipat! I would like to inquire about suits and visit your shop at Devi Mandir road.");
-            document.getElementById('visitStoreWhatsApp').href = StoreDB.getGeneralWhatsAppUrl("Hello Ethnic Grace! I want directions and store timings for your Panipat boutique (Plot no. 99, Uttam Nagar).");
-            document.getElementById('footerWhatsAppLink').href = StoreDB.getGeneralWhatsAppUrl();
+            const directUrl = StoreDB.getDirectWhatsAppUrl();
+            document.getElementById('headerWhatsAppBtn').href = directUrl;
+            document.getElementById('floatingWhatsAppBtn').href = directUrl;
+            document.getElementById('heroWhatsAppDirectBtn').href = directUrl;
+            document.getElementById('visitStoreWhatsApp').href = StoreDB.getDirectWhatsAppUrl("Hello Ethnic Grace! Please share store directions & timings for Plot no. 99, Devi Mandir Road, Panipat.");
+            document.getElementById('footerWhatsAppLink').href = directUrl;
         }
 
         function renderProducts() {
-            const allProducts = StoreDB.getProducts();
-            const config = StoreDB.getConfig();
-            
-            const filtered = allProducts.filter(item => {
-                const matchCategory = currentCategory === "All" || item.category === currentCategory;
-                const matchSearch = !searchQuery || 
-                    item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                    item.fabric.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    item.category.toLowerCase().includes(searchQuery.toLowerCase());
-                return matchCategory && matchSearch;
+            const products = StoreDB.getProducts(), config = StoreDB.getConfig();
+            const filtered = products.filter(p => {
+                const matchCat = currentCategory === "All" || p.category === currentCategory;
+                const matchSearch = !searchQuery || p.title.toLowerCase().includes(searchQuery.toLowerCase()) || p.fabric.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCat && matchSearch;
             });
 
-            productCountLabel.textContent = `Showing ${filtered.length} Panipat boutique ${filtered.length === 1 ? 'outfit' : 'outfits'}`;
-
+            document.getElementById('productCountLabel').textContent = `Showing ${filtered.length} outfits`;
             if (filtered.length === 0) {
                 productGrid.innerHTML = '';
                 emptyCatalogState.classList.remove('hidden');
                 return;
             }
-
             emptyCatalogState.classList.add('hidden');
 
             productGrid.innerHTML = filtered.map(item => {
-                const discountPercent = Math.round(((item.originalPrice - item.salePrice) / item.originalPrice) * 100);
+                const discount = Math.round(((item.originalPrice - item.salePrice)/item.originalPrice)*100);
                 const firstSize = item.sizes && item.sizes.length > 0 ? item.sizes[0] : '';
                 const waUrl = StoreDB.getWhatsAppOrderUrl(item, firstSize);
 
                 return `
-                <div class="group bg-white rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 border border-stone-200/80 flex flex-col">
-                    
-                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-100 cursor-pointer" onclick="openQuickView('${item.id}')">
-                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        
-                        <div class="absolute top-3 left-3 flex flex-col gap-1.5">
-                            ${item.badge ? `<span class="bg-brand-rose text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">${item.badge}</span>` : ''}
-                            ${discountPercent > 0 ? `<span class="bg-emerald-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">${discountPercent}% OFF</span>` : ''}
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xs border border-stone-200 flex flex-col justify-between">
+                    <div class="relative aspect-[4/5] bg-stone-100 cursor-pointer" onclick="openQuickView('${item.id}')">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover object-top hover:scale-105 transition duration-300">
+                        <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+                            ${item.badge ? `<span class="bg-brand-rose text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">${item.badge}</span>` : ''}
+                            <span class="bg-emerald-700 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">${discount}% OFF</span>
                         </div>
-
-                        ${!item.inStock ? `<div class="absolute inset-0 bg-stone-900/60 backdrop-blur-xs flex items-center justify-center"><span class="bg-white text-stone-900 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest">Sold Out</span></div>` : ''}
-
-                        <button class="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-stone-800 p-2.5 rounded-full shadow-md backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity" title="Quick View">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        </button>
                     </div>
-
-                    <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div class="p-4 flex-1 flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between gap-2 mb-1">
-                                <span class="text-[11px] font-bold uppercase tracking-wider text-brand-600">${item.category}</span>
-                                <span class="text-[11px] text-stone-400">Code: ${item.id}</span>
-                            </div>
-
-                            <h4 class="font-serif font-bold text-stone-900 text-lg group-hover:text-brand-rose transition-colors cursor-pointer line-clamp-1" onclick="openQuickView('${item.id}')">
-                                ${item.title}
-                            </h4>
-
-                            <p class="text-xs text-stone-500 mt-1 line-clamp-2 leading-relaxed">
-                                ${item.fabric}
-                            </p>
-
-                            <div class="flex flex-wrap gap-1.5 my-3">
-                                ${item.sizes.map(s => `
-                                    <span class="text-[10px] font-semibold bg-stone-100 text-stone-600 px-2 py-0.5 rounded border border-stone-200">${s}</span>
-                                `).join('')}
-                            </div>
+                            <span class="text-[10px] font-bold text-brand-600 uppercase">${item.category} • ${item.id}</span>
+                            <h4 class="font-serif font-bold text-stone-900 text-base mt-0.5 line-clamp-1 cursor-pointer" onclick="openQuickView('${item.id}')">${item.title}</h4>
+                            <p class="text-xs text-stone-500 mt-1 line-clamp-1">${item.fabric}</p>
                         </div>
-
-                        <div>
-                            <div class="flex items-baseline gap-2 pt-3 border-t border-stone-100 mb-4">
-                                <span class="text-2xl font-extrabold text-brand-rose">${config.currency}${item.salePrice.toLocaleString('en-IN')}</span>
-                                ${item.originalPrice > item.salePrice ? `<span class="text-sm text-stone-400 line-through">${config.currency}${item.originalPrice.toLocaleString('en-IN')}</span>` : ''}
-                                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">10% OFF</span>
+                        <div class="mt-3 pt-3 border-t border-stone-100">
+                            <div class="flex items-baseline gap-2 mb-3">
+                                <span class="text-xl font-bold text-brand-rose">${config.currency}${item.salePrice.toLocaleString('en-IN')}</span>
+                                <span class="text-xs text-stone-400 line-through">${config.currency}${item.originalPrice.toLocaleString('en-IN')}</span>
                             </div>
-
-                            <div class="grid grid-cols-5 gap-2">
-                                <a href="${waUrl}" target="_blank" class="col-span-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-3 rounded-xl transition duration-200 text-xs flex items-center justify-center gap-1.5 shadow-md shadow-emerald-600/10">
-                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                                    <span>WhatsApp Order</span>
+                            <div class="flex gap-2">
+                                <a href="${waUrl}" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 px-3 rounded-xl text-center shadow-xs transition flex items-center justify-center gap-1">
+                                    <span>💬</span>
+                                    <span>Order Now (I'm Interested)</span>
                                 </a>
-                                <button onclick="addToCart('${item.id}')" class="col-span-1 bg-stone-100 hover:bg-brand-100 text-stone-700 hover:text-brand-900 rounded-xl flex items-center justify-center transition-colors border border-stone-200" title="Add to Bag">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                                </button>
+                                <button onclick="addToCart('${item.id}')" class="p-2.5 bg-stone-100 hover:bg-brand-100 text-stone-700 rounded-xl" title="Add to Bag">🛍️</button>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 `;
             }).join('');
@@ -638,261 +324,95 @@
         window.openQuickView = function(id) {
             const product = StoreDB.getProducts().find(p => p.id === id);
             if (!product) return;
-
             const config = StoreDB.getConfig();
-            const discountPercent = Math.round(((product.originalPrice - product.salePrice) / product.originalPrice) * 100);
-
             quickViewContent.innerHTML = `
-                <div class="relative">
-                    <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 bg-white/80 hover:bg-white text-stone-700 p-2 rounded-full shadow-md">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                    </button>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="bg-stone-100 aspect-[4/5] relative">
-                            <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover">
-                            ${product.badge ? `<span class="absolute top-4 left-4 bg-brand-rose text-white text-xs font-bold px-3 py-1 rounded-full uppercase">${product.badge}</span>` : ''}
+                <button onclick="closeQuickView()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700 text-lg">✕</button>
+                <div class="space-y-4">
+                    <img src="${product.image}" alt="${product.title}" class="w-full h-64 object-cover rounded-2xl">
+                    <div>
+                        <span class="text-[10px] font-bold text-brand-600 uppercase">${product.category}</span>
+                        <h3 class="font-serif text-xl font-bold text-stone-900">${product.title}</h3>
+                        <div class="flex items-baseline gap-2 mt-1">
+                            <span class="text-2xl font-bold text-brand-rose">${config.currency}${product.salePrice.toLocaleString('en-IN')}</span>
+                            <span class="text-xs text-stone-400 line-through">${config.currency}${product.originalPrice.toLocaleString('en-IN')}</span>
                         </div>
-
-                        <div class="p-6 md:p-8 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center gap-2 mb-1">
-                                    <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">${product.category}</span>
-                                    <span class="text-[10px] bg-amber-100 text-amber-900 font-bold px-2 py-0.5 rounded">Panipat Store</span>
-                                </div>
-                                <h3 class="font-serif text-2xl font-bold text-stone-900 mb-2">${product.title}</h3>
-                                
-                                <div class="flex items-center gap-3 mb-4">
-                                    <span class="text-3xl font-extrabold text-brand-rose">${config.currency}${product.salePrice.toLocaleString('en-IN')}</span>
-                                    <span class="text-stone-400 line-through text-base">${config.currency}${product.originalPrice.toLocaleString('en-IN')}</span>
-                                    <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">${discountPercent}% OFF</span>
-                                </div>
-
-                                <div class="space-y-2.5 text-xs text-stone-600 border-t border-b border-stone-100 py-3.5 mb-4">
-                                    <p><strong class="text-stone-800">🧵 Fabric & Work:</strong> ${product.fabric}</p>
-                                    <p><strong class="text-stone-800">📍 Availability:</strong> Ready at Panipat Boutique (Plot no. 99, Uttam Nagar) & Worldwide Courier</p>
-                                </div>
-
-                                <label class="block text-xs font-bold text-stone-700 mb-2">Select Your Size:</label>
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    ${product.sizes.map((size, idx) => `
-                                        <button type="button" onclick="selectModalSize(this, '${size}')" class="modal-size-btn text-xs font-medium px-3 py-1.5 rounded-lg border ${idx === 0 ? 'bg-brand-rose text-white border-brand-rose' : 'bg-white text-stone-700 border-stone-300'} transition-all">
-                                            ${size}
-                                        </button>
-                                    `).join('')}
-                                </div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <a id="modalWhatsAppBtn" href="${StoreDB.getWhatsAppOrderUrl(product, product.sizes[0])}" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl text-center shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2 text-sm">
-                                    <span>💬</span> Order on WhatsApp (+91 95182 85233)
-                                </a>
-                                <button onclick="addToCart('${product.id}'); closeQuickView();" class="w-full bg-stone-100 hover:bg-brand-50 text-stone-800 font-semibold py-2.5 px-4 rounded-xl text-xs transition">
-                                    + Add to Selection Bag
-                                </button>
-                            </div>
-                        </div>
+                        <p class="text-xs text-stone-600 mt-2">🧵 <strong>Fabric:</strong> ${product.fabric}</p>
+                        <p class="text-xs text-stone-600 mt-1">📍 <strong>Visit:</strong> Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat</p>
                     </div>
+                    <a href="${StoreDB.getWhatsAppOrderUrl(product, product.sizes[0])}" target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 text-center rounded-xl text-xs">
+                        💬 Order Now / I'm Interested on WhatsApp
+                    </a>
                 </div>
             `;
-
             quickViewModal.classList.remove('hidden');
             quickViewModal.classList.add('flex');
         };
 
-        window.selectModalSize = function(btn, size) {
-            document.querySelectorAll('.modal-size-btn').forEach(b => {
-                b.classList.remove('bg-brand-rose', 'text-white', 'border-brand-rose');
-                b.classList.add('bg-white', 'text-stone-700', 'border-stone-300');
-            });
-            btn.classList.add('bg-brand-rose', 'text-white', 'border-brand-rose');
-            btn.classList.remove('bg-white', 'text-stone-700', 'border-stone-300');
-            
-            const title = quickViewContent.querySelector('h3').textContent;
-            const item = StoreDB.getProducts().find(p => p.title === title);
-            if (item) {
-                document.getElementById('modalWhatsAppBtn').href = StoreDB.getWhatsAppOrderUrl(item, size);
-            }
-        };
-
-        window.closeQuickView = function() {
-            quickViewModal.classList.add('hidden');
-            quickViewModal.classList.remove('flex');
-        };
+        window.closeQuickView = function() { quickViewModal.classList.add('hidden'); quickViewModal.classList.remove('flex'); };
 
         window.addToCart = function(id) {
-            const product = StoreDB.getProducts().find(p => p.id === id);
-            if (!product) return;
-
-            const existing = cartItems.find(item => item.id === id);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cartItems.push({
-                    id: product.id,
-                    title: product.title,
-                    price: product.salePrice,
-                    image: product.image,
-                    size: product.sizes[0] || 'Standard',
-                    qty: 1
-                });
-            }
-
-            saveCart();
+            const p = StoreDB.getProducts().find(i => i.id === id);
+            if (!p) return;
+            const ex = cartItems.find(i => i.id === id);
+            if (ex) ex.qty++; else cartItems.push({ id: p.id, title: p.title, price: p.salePrice, image: p.image, qty: 1 });
+            localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cartItems));
+            updateCartBadge();
             renderCart();
             openCart();
         };
 
-        function saveCart() {
-            localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cartItems));
-            updateCartBadge();
-        }
-
         function updateCartBadge() {
-            const totalCount = cartItems.reduce((sum, i) => sum + i.qty, 0);
-            if (totalCount > 0) {
-                cartCountBadge.textContent = totalCount;
-                cartCountBadge.classList.remove('scale-0');
-            } else {
-                cartCountBadge.classList.add('scale-0');
-            }
+            const cnt = cartItems.reduce((s, i) => s + i.qty, 0);
+            cartCountBadge.textContent = cnt;
+            cartCountBadge.classList.toggle('scale-0', cnt === 0);
         }
 
         function renderCart() {
             const config = StoreDB.getConfig();
             if (cartItems.length === 0) {
-                cartItemsList.innerHTML = `
-                    <div class="text-center py-12 text-stone-400">
-                        <span class="text-4xl block mb-2">🛍️</span>
-                        <p class="text-sm">Your selection bag is empty.</p>
-                        <p class="text-xs text-stone-400 mt-1">Browse outfits and add your favorites!</p>
-                    </div>
-                `;
+                cartItemsList.innerHTML = `<p class="text-center text-xs text-stone-400 py-8">Your bag is empty.</p>`;
                 cartSubtotal.textContent = `${config.currency}0`;
-                cartWhatsAppCheckoutBtn.classList.add('opacity-50', 'pointer-events-none');
                 return;
             }
-
-            cartWhatsAppCheckoutBtn.classList.remove('opacity-50', 'pointer-events-none');
-            let subtotal = 0;
-
-            cartItemsList.innerHTML = cartItems.map((item, index) => {
-                const itemTotal = item.price * item.qty;
-                subtotal += itemTotal;
+            let total = 0;
+            cartItemsList.innerHTML = cartItems.map((it, idx) => {
+                total += it.price * it.qty;
                 return `
-                    <div class="flex gap-3 bg-stone-50 p-3 rounded-xl border border-stone-100 items-center">
-                        <img src="${item.image}" alt="${item.title}" class="w-16 h-20 object-cover rounded-lg">
-                        <div class="flex-1 min-w-0">
-                            <h5 class="font-serif font-bold text-xs text-stone-800 truncate">${item.title}</h5>
-                            <span class="text-[11px] text-stone-500 block">Size: ${item.size}</span>
-                            <span class="text-xs font-extrabold text-brand-rose">${config.currency}${item.price.toLocaleString('en-IN')}</span>
-                            
-                            <div class="flex items-center gap-2 mt-2">
-                                <button onclick="changeCartQty(${index}, -1)" class="w-6 h-6 bg-white border border-stone-200 rounded text-xs hover:bg-stone-100 flex items-center justify-center">-</button>
-                                <span class="text-xs font-bold px-1">${item.qty}</span>
-                                <button onclick="changeCartQty(${index}, 1)" class="w-6 h-6 bg-white border border-stone-200 rounded text-xs hover:bg-stone-100 flex items-center justify-center">+</button>
-                            </div>
-                        </div>
-                        <button onclick="removeCartItem(${index})" class="text-stone-400 hover:text-red-600 p-1">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                        </button>
+                <div class="flex items-center gap-3 bg-stone-50 p-2.5 rounded-xl text-xs">
+                    <img src="${it.image}" class="w-12 h-14 object-cover rounded-lg">
+                    <div class="flex-1 min-w-0">
+                        <h5 class="font-bold truncate">${it.title}</h5>
+                        <span class="text-brand-rose font-bold">${config.currency}${it.price} (Qty: ${it.qty})</span>
                     </div>
+                    <button onclick="cartItems.splice(${idx},1); localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cartItems)); renderCart(); updateCartBadge();" class="text-red-500 font-bold p-1">✕</button>
+                </div>
                 `;
             }).join('');
-
-            cartSubtotal.textContent = `${config.currency}${subtotal.toLocaleString('en-IN')}`;
-
-            const phone = config.phone.replace(/[^0-9]/g, '');
-            let message = `🌸 *Namaste Ethnic Grace Panipat!* 🌸\nI would like to order the following items:\n\n`;
-            cartItems.forEach((it, i) => {
-                message += `${i+1}. *${it.title}*\n   - Size: ${it.size} | Qty: ${it.qty} | Price: ${config.currency}${(it.price * it.qty).toLocaleString('en-IN')}\n`;
-            });
-            message += `\n💰 *Total Estimate:* ${config.currency}${subtotal.toLocaleString('en-IN')}\n📍 *Store Location:* Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat\n📦 Please confirm availability and shipping!`;
-
-            cartWhatsAppCheckoutBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            cartSubtotal.textContent = `${config.currency}${total.toLocaleString('en-IN')}`;
+            let msg = `🌸 *Ethnic Grace Panipat Inquiry*\nHello, I am interested in these items:\n` + cartItems.map((it, i) => `${i+1}. ${it.title} (Qty: ${it.qty})`).join('\n') + `\nTotal: ${config.currency}${total}`;
+            cartWhatsAppCheckoutBtn.href = `https://wa.me/${config.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(msg)}`;
         }
 
-        window.changeCartQty = function(index, delta) {
-            if (!cartItems[index]) return;
-            cartItems[index].qty += delta;
-            if (cartItems[index].qty <= 0) {
-                cartItems.splice(index, 1);
-            }
-            saveCart();
-            renderCart();
-        };
-
-        window.removeCartItem = function(index) {
-            cartItems.splice(index, 1);
-            saveCart();
-            renderCart();
-        };
-
-        function openCart() {
-            cartDrawer.classList.remove('hidden');
-            cartDrawer.classList.add('flex');
-        }
-
-        function closeCart() {
-            cartDrawer.classList.add('hidden');
-            cartDrawer.classList.remove('flex');
-        }
-
-        cartDrawerBtn.addEventListener('click', () => { renderCart(); openCart(); });
-        closeCartDrawerBtn.addEventListener('click', closeCart);
-        cartDrawer.addEventListener('click', (e) => { if (e.target === cartDrawer) closeCart(); });
+        function openCart() { cartDrawer.classList.remove('hidden'); cartDrawer.classList.add('flex'); }
+        window.closeCart = function() { cartDrawer.classList.add('hidden'); cartDrawer.classList.remove('flex'); };
+        document.getElementById('cartDrawerBtn').addEventListener('click', () => { renderCart(); openCart(); });
 
         categoryChips.addEventListener('click', (e) => {
             const pill = e.target.closest('.cat-pill');
             if (!pill) return;
-            
-            document.querySelectorAll('.cat-pill').forEach(p => {
-                p.classList.remove('bg-brand-rose', 'text-white', 'font-bold');
-                p.classList.add('bg-white', 'text-stone-700', 'border', 'border-stone-200');
-            });
-
+            document.querySelectorAll('.cat-pill').forEach(p => { p.classList.remove('bg-brand-rose', 'text-white', 'font-bold'); p.classList.add('bg-white', 'text-stone-700'); });
             pill.classList.add('bg-brand-rose', 'text-white', 'font-bold');
-            pill.classList.remove('bg-white', 'text-stone-700', 'border', 'border-stone-200');
-
+            pill.classList.remove('bg-white', 'text-stone-700');
             currentCategory = pill.dataset.category;
             renderProducts();
         });
 
-        searchInput.addEventListener('input', (e) => {
-            searchQuery = e.target.value;
-            renderProducts();
-        });
-
-        mobileSearchInput.addEventListener('input', (e) => {
-            searchQuery = e.target.value;
-            renderProducts();
-        });
-
-        mobileSearchToggle.addEventListener('click', () => {
-            mobileSearchBar.classList.toggle('hidden');
-            if (!mobileSearchBar.classList.contains('hidden')) {
-                mobileSearchInput.focus();
-            }
-        });
-
-        window.resetFilters = function() {
-            searchQuery = "";
-            currentCategory = "All";
-            searchInput.value = "";
-            mobileSearchInput.value = "";
-            const firstPill = categoryChips.querySelector('[data-category="All"]');
-            if (firstPill) firstPill.click();
-        };
-
+        searchInput.addEventListener('input', (e) => { searchQuery = e.target.value; renderProducts(); });
+        window.resetFilters = function() { searchQuery = ""; currentCategory = "All"; searchInput.value = ""; categoryChips.querySelector('[data-category="All"]').click(); };
         window.addEventListener('store_products_updated', renderProducts);
-        window.addEventListener('store_config_updated', () => {
-            applyStoreConfig();
-            renderProducts();
-        });
+        window.addEventListener('store_config_updated', () => { applyStoreConfig(); renderProducts(); });
 
-        applyStoreConfig();
-        renderProducts();
-        updateCartBadge();
+        applyStoreConfig(); renderProducts(); updateCartBadge();
     </script>
 </body>
 </html>

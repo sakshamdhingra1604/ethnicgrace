@@ -3,33 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethnic Grace Panipat | Admin Management Panel</title>
-    
-    <!-- Google Fonts -->
+    <title>Ethnic Grace Panipat | Admin Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brand: {
-                            50: '#FDF8F7',
-                            100: '#F9ECE9',
-                            200: '#F2D7D1',
-                            rose: '#8E2344',
-                            'rose-dark': '#69152F',
-                            gold: '#C5A059'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif']
-                    }
+                    colors: { brand: { 50: '#FDF8F7', rose: '#8E2344', 'rose-dark': '#69152F' } },
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] }
                 }
             }
         }
@@ -38,134 +22,54 @@
 <body class="bg-stone-100 text-stone-800 font-sans antialiased min-h-screen">
 
     <!-- Auth PIN Gate -->
-    <div id="authGate" class="fixed inset-0 z-50 bg-stone-900/90 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-sm w-full p-8 text-center shadow-2xl border border-stone-200">
-            <div class="w-16 h-16 rounded-full bg-brand-50 border-2 border-brand-rose/20 text-brand-rose mx-auto flex items-center justify-center text-2xl mb-4 font-serif font-bold">
-                EG
-            </div>
-            <div class="flex items-center justify-center gap-1.5 mb-1">
-                <h2 class="font-serif text-xl font-bold text-stone-900">Ethnic Grace Admin</h2>
-                <span class="bg-amber-100 text-amber-900 text-[9px] font-extrabold px-1.5 py-0.5 rounded">PANIPAT</span>
-            </div>
-            <p class="text-xs text-stone-500 mb-6">Enter Admin PIN to manage catalog & shop</p>
-            
-            <form id="authForm" class="space-y-4">
-                <div>
-                    <input type="password" id="pinInput" placeholder="Enter Admin PIN" maxlength="20"
-                        class="w-full text-center tracking-wider text-xl font-bold py-3 px-4 bg-stone-50 border border-stone-300 rounded-xl focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                </div>
-                <div id="authError" class="text-xs text-red-600 font-semibold hidden">Incorrect PIN! (Default: Chirag@12300)</div>
-                <button type="submit" class="w-full bg-brand-rose hover:bg-brand-rose-dark text-white font-bold py-3 px-4 rounded-xl transition shadow-md">
+    <div id="authGate" class="fixed inset-0 z-50 bg-stone-900/90 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl border border-stone-200">
+            <div class="w-12 h-12 rounded-full bg-brand-50 text-brand-rose mx-auto flex items-center justify-center text-lg mb-3 font-serif font-bold border">EG</div>
+            <h2 class="font-serif text-lg font-bold text-stone-900">Ethnic Grace Panipat Admin</h2>
+            <p class="text-xs text-stone-500 mb-4">Enter PIN to manage suits & prices</p>
+            <form id="authForm" class="space-y-3">
+                <input type="password" id="pinInput" placeholder="Enter PIN" maxlength="20" required
+                    class="w-full text-center text-lg font-bold py-2.5 px-3 bg-stone-50 border border-stone-300 rounded-xl focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                <div id="authError" class="text-xs text-red-600 font-semibold hidden">Incorrect PIN! (Chirag@12300)</div>
+                <button type="submit" class="w-full bg-brand-rose hover:bg-brand-rose-dark text-white font-bold py-2.5 rounded-xl text-xs transition">
                     Unlock Dashboard
                 </button>
             </form>
-            <div class="mt-4 pt-4 border-t border-stone-100 text-[11px] text-stone-400">
-                Current PIN: <span class="font-mono font-bold text-stone-700">Chirag@12300</span>
-            </div>
+            <p class="mt-3 text-[11px] text-stone-400">PIN: <span class="font-mono font-bold text-stone-600">Chirag@12300</span></p>
         </div>
     </div>
 
-    <!-- Main Admin Container -->
+    <!-- Main Dashboard -->
     <div id="dashboardApp" class="hidden min-h-screen flex flex-col">
-
-        <!-- Top Admin Header -->
+        <!-- Top Nav -->
         <header class="bg-white border-b border-stone-200 sticky top-0 z-30 shadow-xs">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-16">
-                    
-                    <!-- Brand & Status -->
-                    <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-brand-rose text-white font-serif font-bold text-sm flex items-center justify-center">
-                            EG
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-1.5">
-                                <h1 class="font-serif font-bold text-base text-stone-900 leading-none">Ethnic Grace</h1>
-                                <span class="text-[9px] bg-amber-100 text-amber-900 font-bold px-1 rounded">PANIPAT</span>
-                            </div>
-                            <span class="text-[10px] text-emerald-600 font-semibold flex items-center gap-1 mt-0.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                                WhatsApp: +91 95182 85233 Connected
-                            </span>
-                        </div>
+            <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-brand-rose text-white font-serif font-bold text-xs flex items-center justify-center">EG</div>
+                    <div>
+                        <h1 class="font-serif font-bold text-sm text-stone-900 leading-tight">Ethnic Grace Panipat</h1>
+                        <span class="text-[10px] text-emerald-600 font-bold">WhatsApp: +91 95182 85233</span>
                     </div>
-
-                    <!-- Navigation Tabs -->
-                    <nav class="hidden md:flex items-center gap-1 bg-stone-100 p-1 rounded-xl">
-                        <button onclick="switchTab('products')" class="admin-tab active-tab px-4 py-1.5 text-xs font-bold rounded-lg transition bg-white text-stone-900 shadow-xs" data-tab="products">
-                            👗 Manage Outfits (10% Sale)
-                        </button>
-                        <button onclick="switchTab('settings')" class="admin-tab px-4 py-1.5 text-xs font-medium rounded-lg transition text-stone-600 hover:text-stone-900" data-tab="settings">
-                            ⚙️ Panipat Store & WhatsApp
-                        </button>
-                        <button onclick="switchTab('backup')" class="admin-tab px-4 py-1.5 text-xs font-medium rounded-lg transition text-stone-600 hover:text-stone-900" data-tab="backup">
-                            💾 Backup & Restore
-                        </button>
-                    </nav>
-
-                    <!-- Storefront & Logout -->
-                    <div class="flex items-center gap-2">
-                        <a href="../index.html" target="_blank" class="inline-flex items-center gap-1.5 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold px-3 py-2 rounded-lg transition">
-                            <span>👁️ View Storefront</span>
-                        </a>
-                        <button onclick="logoutAdmin()" class="p-2 text-stone-400 hover:text-red-600 rounded-lg hover:bg-red-50 transition" title="Lock Dashboard">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-                        </button>
-                    </div>
-
                 </div>
-            </div>
 
-            <!-- Mobile Subnav -->
-            <div class="flex md:hidden border-t border-stone-100 bg-stone-50 px-2 py-1 gap-1 overflow-x-auto">
-                <button onclick="switchTab('products')" class="admin-tab active-tab flex-1 whitespace-nowrap px-3 py-1.5 text-xs font-bold rounded-lg transition bg-white text-stone-900 shadow-xs" data-tab="products">👗 Outfits</button>
-                <button onclick="switchTab('settings')" class="admin-tab flex-1 whitespace-nowrap px-3 py-1.5 text-xs font-medium rounded-lg transition text-stone-600" data-tab="settings">⚙️ Store Settings</button>
-                <button onclick="switchTab('backup')" class="admin-tab flex-1 whitespace-nowrap px-3 py-1.5 text-xs font-medium rounded-lg transition text-stone-600" data-tab="backup">💾 Backup</button>
+                <div class="flex items-center gap-2">
+                    <button onclick="switchTab('products')" class="tab-btn active-tab text-xs font-bold px-3 py-1.5 rounded-lg bg-stone-100" data-tab="products">👗 Outfits</button>
+                    <button onclick="switchTab('settings')" class="tab-btn text-xs text-stone-600 px-3 py-1.5 rounded-lg hover:bg-stone-50" data-tab="settings">⚙️ Settings</button>
+                    <a href="../index.html" target="_blank" class="text-xs bg-brand-50 text-brand-rose font-bold px-3 py-1.5 rounded-lg border border-brand-rose/20">👁️ View Store</a>
+                    <button onclick="logoutAdmin()" class="text-xs text-stone-400 hover:text-red-600 p-1.5">🔒</button>
+                </div>
             </div>
         </header>
 
-        <!-- Main Body -->
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
-
-            <!-- TAB 1: PRODUCTS MANAGER -->
+        <!-- Body Content -->
+        <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full">
+            
+            <!-- TAB 1: PRODUCTS -->
             <section id="tab-products" class="tab-content block">
-                
-                <!-- Quick Stats -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                    <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-xs flex items-center justify-between">
-                        <div>
-                            <span class="text-xs text-stone-500 block">Total Outfits in Store</span>
-                            <span id="statTotalProducts" class="font-serif text-2xl font-bold text-stone-900">0</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-rose flex items-center justify-center text-xl">👗</div>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-xs flex items-center justify-between">
-                        <div>
-                            <span class="text-xs text-stone-500 block">Active Categories</span>
-                            <span id="statTotalCategories" class="font-serif text-2xl font-bold text-stone-900">0</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl">🏷️</div>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-xs flex items-center justify-between">
-                        <div>
-                            <span class="text-xs text-stone-500 block">WhatsApp Orders Line</span>
-                            <span id="statWhatsAppNum" class="text-xs font-mono font-bold text-emerald-700 block mt-1">+91 95182 85233</span>
-                        </div>
-                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl">💬</div>
-                    </div>
-                </div>
-
-                <!-- Action Bar & Add Button -->
-                <div class="bg-white p-4 rounded-2xl border border-stone-200 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div class="flex items-center gap-3 w-full sm:w-auto">
-                        <div class="relative flex-1 sm:w-64">
-                            <input type="text" id="adminSearch" placeholder="Search Panipat suits..." 
-                                class="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl py-2.5 pl-9 pr-3 focus:outline-none focus:ring-2 focus:ring-brand-rose">
-                            <span class="absolute left-3 top-2.5 text-stone-400 text-xs">🔍</span>
-                        </div>
-                        <select id="adminCategoryFilter" class="text-xs bg-stone-50 border border-stone-200 rounded-xl py-2.5 px-3 focus:outline-none">
+                <div class="bg-white p-4 rounded-2xl border border-stone-200 mb-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <div class="flex items-center gap-2 w-full sm:w-auto">
+                        <input type="text" id="adminSearch" placeholder="Search outfits..." class="text-xs bg-stone-50 border border-stone-200 rounded-xl py-2 px-3 focus:outline-none w-full sm:w-48">
+                        <select id="adminCategoryFilter" class="text-xs bg-stone-50 border border-stone-200 rounded-xl py-2 px-2">
                             <option value="All">All Categories</option>
                             <option value="Designer Suits">Designer Suits</option>
                             <option value="Anarkali Sets">Anarkali Sets</option>
@@ -174,172 +78,88 @@
                             <option value="Bridal Lehengas">Bridal Lehengas</option>
                         </select>
                     </div>
-
-                    <button onclick="openProductModal()" class="w-full sm:w-auto bg-brand-rose hover:bg-brand-rose-dark text-white text-xs font-bold px-5 py-3 rounded-xl shadow-md transition flex items-center justify-center gap-2">
-                        <span class="text-base font-bold">+</span>
-                        <span>Add New Suit / Product</span>
+                    <button onclick="openProductModal()" class="w-full sm:w-auto bg-brand-rose hover:bg-brand-rose-dark text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xs transition">
+                        + Add New Suit
                     </button>
                 </div>
 
-                <!-- Products Table -->
-                <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
-                            <thead>
-                                <tr class="bg-stone-50 border-b border-stone-200 text-[11px] font-bold text-stone-500 uppercase tracking-wider">
-                                    <th class="py-3.5 px-4">Item & Code</th>
-                                    <th class="py-3.5 px-4">Category & Fabric</th>
-                                    <th class="py-3.5 px-4">Price / Discount</th>
-                                    <th class="py-3.5 px-4">Sizes</th>
-                                    <th class="py-3.5 px-4">Status</th>
-                                    <th class="py-3.5 px-4 text-right">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="adminProductsTableBody" class="divide-y divide-stone-100 text-xs">
-                                <!-- Dynamic rows -->
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead class="bg-stone-50 border-b border-stone-200 font-bold text-stone-500 uppercase text-[10px]">
+                            <tr>
+                                <th class="p-3">Outfit & Code</th>
+                                <th class="p-3">Category</th>
+                                <th class="p-3">Price</th>
+                                <th class="p-3">Stock</th>
+                                <th class="p-3 text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductsTableBody" class="divide-y divide-stone-100"></tbody>
+                    </table>
                 </div>
-
             </section>
 
-            <!-- TAB 2: STORE SETTINGS -->
-            <section id="tab-settings" class="tab-content hidden max-w-3xl mx-auto">
-                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-stone-200 shadow-xs">
-                    <div class="border-b border-stone-100 pb-4 mb-6">
-                        <h3 class="font-serif text-xl font-bold text-stone-900">Panipat Store Details & WhatsApp Settings</h3>
-                        <p class="text-xs text-stone-500 mt-1">Changes made here immediately update on your live website.</p>
-                    </div>
-
-                    <form id="settingsForm" class="space-y-6">
+            <!-- TAB 2: SETTINGS & BACKUP -->
+            <section id="tab-settings" class="tab-content hidden max-w-xl mx-auto space-y-4">
+                <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-xs">
+                    <h3 class="font-serif font-bold text-base text-stone-900 mb-3">Panipat Store Details</h3>
+                    <form id="settingsForm" class="space-y-3 text-xs">
                         <div>
-                            <label class="block text-xs font-bold text-stone-700 mb-1">WhatsApp Business Number</label>
-                            <div class="flex gap-2">
-                                <span class="bg-stone-100 border border-stone-300 rounded-xl px-3.5 py-2.5 text-xs font-mono font-bold text-stone-600 flex items-center">💬 +</span>
-                                <input type="text" id="settingPhone" placeholder="919518285233" required
-                                    class="flex-1 text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 font-mono font-bold focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                            </div>
-                            <p class="text-[11px] text-stone-400 mt-1">Current WhatsApp: 919518285233 (Country code 91 included)</p>
+                            <label class="font-bold text-stone-700 block mb-1">WhatsApp Number</label>
+                            <input type="text" id="settingPhone" placeholder="919518285233" required class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl font-mono">
                         </div>
-
                         <div>
-                            <label class="block text-xs font-bold text-stone-700 mb-1">Top Announcement Bar Text</label>
-                            <input type="text" id="settingAnnouncement" placeholder="🎉 GRAND OPENING: Flat 10% OFF..."
-                                class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                            <label class="font-bold text-stone-700 block mb-1">Top Announcement Offer</label>
+                            <input type="text" id="settingAnnouncement" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
                         </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-stone-700 mb-1">Store Name</label>
-                                <input type="text" id="settingStoreName" placeholder="Ethnic Grace"
-                                    class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-stone-700 mb-1">Currency Symbol</label>
-                                <input type="text" id="settingCurrency" placeholder="₹"
-                                    class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                            </div>
-                        </div>
-
                         <div>
-                            <label class="block text-xs font-bold text-stone-700 mb-1">Boutique Address (Panipat)</label>
-                            <input type="text" id="settingAddress" placeholder="Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat - 132103"
-                                class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                            <label class="font-bold text-stone-700 block mb-1">Boutique Address (Panipat)</label>
+                            <input type="text" id="settingAddress" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
                         </div>
-
                         <div>
-                            <label class="block text-xs font-bold text-stone-700 mb-1">Admin Security PIN</label>
-                            <input type="text" id="settingAdminPin" placeholder="Chirag@12300" maxlength="20"
-                                class="w-full max-w-xs text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 font-mono font-bold focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                            <p class="text-[11px] text-stone-400 mt-1">Current PIN is set to <span class="font-mono font-bold text-stone-700">Chirag@12300</span></p>
+                            <label class="font-bold text-stone-700 block mb-1">Admin Security PIN</label>
+                            <input type="text" id="settingAdminPin" placeholder="Chirag@12300" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl font-mono">
                         </div>
-
-                        <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
-                            <span id="settingsSaveStatus" class="text-xs text-emerald-600 font-bold hidden">✓ Settings saved successfully!</span>
-                            <button type="submit" class="bg-brand-rose hover:bg-brand-rose-dark text-white text-xs font-bold px-6 py-3 rounded-xl shadow-md transition ml-auto">
-                                Save Settings
-                            </button>
+                        <div class="pt-2 flex justify-between items-center">
+                            <span id="settingsSaveStatus" class="text-emerald-600 font-bold hidden">✓ Saved!</span>
+                            <button type="submit" class="bg-brand-rose text-white font-bold px-4 py-2 rounded-xl">Save Settings</button>
                         </div>
                     </form>
                 </div>
-            </section>
 
-            <!-- TAB 3: BACKUP & RESTORE -->
-            <section id="tab-backup" class="tab-content hidden max-w-3xl mx-auto">
-                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-stone-200 shadow-xs space-y-8">
-                    
+                <div class="bg-white p-5 rounded-2xl border border-stone-200 flex justify-between items-center text-xs">
                     <div>
-                        <h3 class="font-serif text-xl font-bold text-stone-900">Catalog Backup & Data Safety</h3>
-                        <p class="text-xs text-stone-500 mt-1">Download your full store catalog as a backup file or restore it anytime.</p>
+                        <h4 class="font-bold text-stone-900">Backup & Restore</h4>
+                        <p class="text-[11px] text-stone-500">Save catalog file to your laptop or restore.</p>
                     </div>
-
-                    <div class="p-5 bg-stone-50 rounded-xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div>
-                            <h4 class="text-xs font-bold text-stone-800">📥 Export Panipat Catalog Backup (JSON)</h4>
-                            <p class="text-[11px] text-stone-500 mt-0.5">Save all products, prices, images and settings to your computer.</p>
-                        </div>
-                        <button onclick="exportStoreData()" class="bg-stone-800 hover:bg-black text-white text-xs font-bold px-4 py-2.5 rounded-xl whitespace-nowrap transition">
-                            Download Backup File
-                        </button>
+                    <div class="flex gap-2">
+                        <button onclick="exportStoreData()" class="bg-stone-800 text-white font-bold px-3 py-1.5 rounded-lg">Export JSON</button>
+                        <input type="file" id="importFileInput" accept=".json" class="hidden" onchange="importStoreData(event)">
+                        <button onclick="document.getElementById('importFileInput').click()" class="border border-stone-300 px-3 py-1.5 rounded-lg font-bold">Import</button>
                     </div>
-
-                    <div class="p-5 bg-stone-50 rounded-xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div>
-                            <h4 class="text-xs font-bold text-stone-800">📤 Restore / Upload Backup</h4>
-                            <p class="text-[11px] text-stone-500 mt-0.5">Restore catalog from a previously downloaded .json backup file.</p>
-                        </div>
-                        <div>
-                            <input type="file" id="importFileInput" accept=".json" class="hidden" onchange="importStoreData(event)">
-                            <button onclick="document.getElementById('importFileInput').click()" class="bg-brand-rose hover:bg-brand-rose-dark text-white text-xs font-bold px-4 py-2.5 rounded-xl whitespace-nowrap transition">
-                                Select File to Restore
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="p-5 bg-red-50/60 rounded-xl border border-red-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div>
-                            <h4 class="text-xs font-bold text-red-800">⚠️ Reset to Grand Opening Collection</h4>
-                            <p class="text-[11px] text-red-600 mt-0.5">Reload the default Panipat launch suits and settings.</p>
-                        </div>
-                        <button onclick="resetDemoCatalog()" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl whitespace-nowrap transition">
-                            Reset Sample Data
-                        </button>
-                    </div>
-
                 </div>
             </section>
 
         </main>
     </div>
 
-    <!-- ADD / EDIT PRODUCT MODAL -->
-    <div id="productModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-stone-200 p-6 sm:p-8">
-            
-            <div class="flex items-center justify-between pb-4 mb-4 border-b border-stone-100">
-                <div>
-                    <h3 id="modalTitle" class="font-serif text-xl font-bold text-stone-900">Add New Suit / Product</h3>
-                    <p class="text-xs text-stone-400">Fill in the details below to publish directly to the storefront.</p>
-                </div>
-                <button onclick="closeProductModal()" class="p-2 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-100">
-                    ✕
-                </button>
+    <!-- Add / Edit Modal -->
+    <div id="productModal" class="fixed inset-0 z-50 bg-black/60 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 shadow-2xl">
+            <div class="flex justify-between items-center pb-3 border-b border-stone-100 mb-3">
+                <h3 id="modalTitle" class="font-serif font-bold text-base">Add New Suit</h3>
+                <button onclick="closeProductModal()" class="text-stone-400 text-lg">✕</button>
             </div>
-
-            <form id="productForm" class="space-y-4">
+            <form id="productForm" class="space-y-3 text-xs">
                 <input type="hidden" id="editProductId">
-
                 <div>
-                    <label class="block text-xs font-bold text-stone-700 mb-1">Product Title / Name *</label>
-                    <input type="text" id="prodTitle" required placeholder="e.g. Panipat Special Crimson Embroidered Suit"
-                        class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                    <label class="font-bold text-stone-700 block mb-1">Title *</label>
+                    <input type="text" id="prodTitle" required placeholder="e.g. Crimson Embroidered Suit" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
                 </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-2">
                     <div>
-                        <label class="block text-xs font-bold text-stone-700 mb-1">Category *</label>
-                        <select id="prodCategory" required class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                        <label class="font-bold text-stone-700 block mb-1">Category *</label>
+                        <select id="prodCategory" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
                             <option value="Designer Suits">Designer Suits</option>
                             <option value="Anarkali Sets">Anarkali Sets</option>
                             <option value="Festive Kurtis">Festive Kurtis</option>
@@ -347,504 +167,182 @@
                             <option value="Bridal Lehengas">Bridal Lehengas</option>
                         </select>
                     </div>
-
                     <div>
-                        <label class="block text-xs font-bold text-stone-700 mb-1">Tag / Badge</label>
-                        <select id="prodBadge" class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                            <option value="Grand Opening Special">Grand Opening Special</option>
-                            <option value="New Arrival">New Arrival</option>
-                            <option value="Panipat Special">Panipat Special</option>
-                            <option value="Hot Seller">Hot Seller</option>
-                            <option value="10% OFF Launch">10% OFF Launch</option>
-                            <option value="Limited Edition">Limited Edition</option>
-                            <option value="">No Badge</option>
-                        </select>
+                        <label class="font-bold text-stone-700 block mb-1">Badge</label>
+                        <input type="text" id="prodBadge" placeholder="e.g. Grand Opening Special" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
                     </div>
                 </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="grid grid-cols-2 gap-2">
                     <div>
-                        <label class="block text-xs font-bold text-stone-700 mb-1">Original Price (MRP) ₹ *</label>
-                        <input type="number" id="prodOriginalPrice" required min="1" placeholder="2999" oninput="calculateDiscountPreview()"
-                            class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                        <label class="font-bold text-stone-700 block mb-1">MRP Price ₹ *</label>
+                        <input type="number" id="prodOriginalPrice" required placeholder="2999" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
                     </div>
-
                     <div>
-                        <label class="block text-xs font-bold text-stone-700 mb-1">Opening Sale Price ₹ *</label>
-                        <input type="number" id="prodSalePrice" required min="1" placeholder="2699" oninput="calculateDiscountPreview()"
-                            class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold text-stone-700 mb-1">Calculated Discount</label>
-                        <div id="discountPreviewText" class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 text-center">
-                            10% OFF
-                        </div>
+                        <label class="font-bold text-stone-700 block mb-1">Opening Sale Price ₹ *</label>
+                        <input type="number" id="prodSalePrice" required placeholder="2699" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
                     </div>
                 </div>
-
                 <div>
-                    <label class="block text-xs font-bold text-stone-700 mb-1">Fabric & Work Summary *</label>
-                    <input type="text" id="prodFabric" required placeholder="e.g. Pure Georgette with Zari Embroidery & Scalloped Dupatta"
-                        class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                    <label class="font-bold text-stone-700 block mb-1">Fabric & Work *</label>
+                    <input type="text" id="prodFabric" required placeholder="Pure Georgette with Zari & Sequence Handwork" class="w-full p-2 bg-stone-50 border border-stone-300 rounded-xl">
                 </div>
-
                 <div>
-                    <label class="block text-xs font-bold text-stone-700 mb-1">Detailed Description (Optional)</label>
-                    <textarea id="prodDescription" rows="2" placeholder="Panipat boutique trial fitting available, dupatta length, bottom fabric..."
-                        class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none"></textarea>
+                    <label class="font-bold text-stone-700 block mb-1">Image (File Upload or URL) *</label>
+                    <input type="file" id="prodFileInput" accept="image/*" class="w-full text-[11px]" onchange="handleImageFileSelect(event)">
+                    <input type="url" id="prodImageUrl" placeholder="Or paste image URL" class="w-full p-2 mt-1 bg-stone-50 border border-stone-300 rounded-xl">
                 </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-stone-700 mb-1">Product Photo *</label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
-                        <div>
-                            <input type="file" id="prodFileInput" accept="image/*" class="w-full text-xs text-stone-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-rose hover:file:bg-brand-100 cursor-pointer" onchange="handleImageFileSelect(event)">
-                            <span class="text-[10px] text-stone-400 block mt-1">Upload from Phone / Computer</span>
-                        </div>
-                        <div>
-                            <input type="url" id="prodImageUrl" placeholder="Or paste image link (http://...)" oninput="updateImagePreview(this.value)"
-                                class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2 focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                            <span class="text-[10px] text-stone-400 block mt-1">Or paste web photo link</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 flex items-center gap-3">
-                        <div class="w-16 h-20 bg-stone-100 rounded-xl overflow-hidden border border-stone-200 flex items-center justify-center">
-                            <img id="imagePreview" src="" alt="Preview" class="w-full h-full object-cover hidden">
-                            <span id="imagePreviewPlaceholder" class="text-stone-400 text-xs">No image</span>
-                        </div>
-                        <p class="text-xs text-stone-500">Live preview will appear here.</p>
-                    </div>
+                <div class="pt-2 flex justify-end gap-2">
+                    <button type="button" onclick="closeProductModal()" class="px-4 py-2 border rounded-xl">Cancel</button>
+                    <button type="submit" class="bg-brand-rose text-white font-bold px-5 py-2 rounded-xl">Save Outfit</button>
                 </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-stone-700 mb-2">Available Sizes *</label>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <label class="inline-flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200 cursor-pointer">
-                            <input type="checkbox" name="sizes" value="S" class="rounded text-brand-rose"> <span>S (36)</span>
-                        </label>
-                        <label class="inline-flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200 cursor-pointer">
-                            <input type="checkbox" name="sizes" value="M" checked class="rounded text-brand-rose"> <span>M (38)</span>
-                        </label>
-                        <label class="inline-flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200 cursor-pointer">
-                            <input type="checkbox" name="sizes" value="L" checked class="rounded text-brand-rose"> <span>L (40)</span>
-                        </label>
-                        <label class="inline-flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200 cursor-pointer">
-                            <input type="checkbox" name="sizes" value="XL" checked class="rounded text-brand-rose"> <span>XL (42)</span>
-                        </label>
-                        <label class="inline-flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200 cursor-pointer">
-                            <input type="checkbox" name="sizes" value="XXL" class="rounded text-brand-rose"> <span>XXL (44)</span>
-                        </label>
-                        <label class="inline-flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200 cursor-pointer">
-                            <input type="checkbox" name="sizes" value="Semi-Stitched" class="rounded text-brand-rose"> <span>Semi-Stitched</span>
-                        </label>
-                        <label class="inline-flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200 cursor-pointer">
-                            <input type="checkbox" name="sizes" value="Unstitched" class="rounded text-brand-rose"> <span>Unstitched</span>
-                        </label>
-                        <label class="inline-flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-lg border border-stone-200 cursor-pointer">
-                            <input type="checkbox" name="sizes" value="Free Size" class="rounded text-brand-rose"> <span>Free Size (Saree)</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="pt-2">
-                    <label class="inline-flex items-center gap-2 cursor-pointer">
-                        <input type="checkbox" id="prodInStock" checked class="w-4 h-4 text-emerald-600 rounded">
-                        <span class="text-xs font-bold text-stone-700">Currently in Stock (Available in Panipat Shop & Online)</span>
-                    </label>
-                </div>
-
-                <div class="pt-4 border-t border-stone-100 flex items-center justify-end gap-3">
-                    <button type="button" onclick="closeProductModal()" class="px-5 py-2.5 text-xs font-semibold text-stone-600 hover:bg-stone-100 rounded-xl transition">
-                        Cancel
-                    </button>
-                    <button type="submit" class="bg-brand-rose hover:bg-brand-rose-dark text-white text-xs font-bold px-6 py-2.5 rounded-xl shadow-md transition">
-                        Save & Publish
-                    </button>
-                </div>
-
             </form>
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="../products.js"></script>
     <script>
-        let currentUploadedImageBase64 = "";
+        let currentUploadedImage = "";
+        const authGate = document.getElementById('authGate'), dashboardApp = document.getElementById('dashboardApp');
+        if (sessionStorage.getItem('ethnic_admin_auth') === 'true') { authGate.classList.add('hidden'); dashboardApp.classList.remove('hidden'); init(); }
 
-        const authGate = document.getElementById('authGate');
-        const dashboardApp = document.getElementById('dashboardApp');
-        const authForm = document.getElementById('authForm');
-        const pinInput = document.getElementById('pinInput');
-        const authError = document.getElementById('authError');
-
-        if (sessionStorage.getItem('ethnic_admin_auth') === 'true') {
-            authGate.classList.add('hidden');
-            dashboardApp.classList.remove('hidden');
-            initDashboard();
-        }
-
-        authForm.addEventListener('submit', (e) => {
+        document.getElementById('authForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const config = StoreDB.getConfig();
-            const pin = pinInput.value.trim();
-            const expectedPin = config.adminPin || "Chirag@12300";
-
-            if (pin === expectedPin) {
+            if (document.getElementById('pinInput').value.trim() === (config.adminPin || "Chirag@12300")) {
                 sessionStorage.setItem('ethnic_admin_auth', 'true');
                 authGate.classList.add('hidden');
                 dashboardApp.classList.remove('hidden');
-                initDashboard();
-            } else {
-                authError.classList.remove('hidden');
-            }
+                init();
+            } else { document.getElementById('authError').classList.remove('hidden'); }
         });
 
-        function logoutAdmin() {
-            sessionStorage.removeItem('ethnic_admin_auth');
-            location.reload();
-        }
-
-        function switchTab(tabId) {
+        function logoutAdmin() { sessionStorage.removeItem('ethnic_admin_auth'); location.reload(); }
+        function switchTab(id) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.admin-tab').forEach(el => {
-                el.classList.remove('bg-white', 'text-stone-900', 'shadow-xs', 'font-bold');
-                el.classList.add('text-stone-600');
-            });
-
-            const targetSection = document.getElementById('tab-' + tabId);
-            if (targetSection) targetSection.classList.remove('hidden');
-
-            document.querySelectorAll(`[data-tab="${tabId}"]`).forEach(btn => {
-                btn.classList.add('bg-white', 'text-stone-900', 'shadow-xs', 'font-bold');
-                btn.classList.remove('text-stone-600');
-            });
+            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('bg-stone-100', 'font-bold'); el.classList.add('text-stone-600'); });
+            document.getElementById('tab-' + id).classList.remove('hidden');
+            document.querySelector(`[data-tab="${id}"]`).classList.add('bg-stone-100', 'font-bold');
         }
 
-        function initDashboard() {
-            renderAdminStats();
-            renderAdminProducts();
-            populateSettingsForm();
+        function init() { renderTable(); populateSettings(); }
+
+        function renderTable() {
+            const products = StoreDB.getProducts(), config = StoreDB.getConfig();
+            const search = document.getElementById('adminSearch').value.toLowerCase();
+            const cat = document.getElementById('adminCategoryFilter').value;
+            const filtered = products.filter(p => (cat === "All" || p.category === cat) && (!search || p.title.toLowerCase().includes(search) || p.id.toLowerCase().includes(search)));
+
+            document.getElementById('adminProductsTableBody').innerHTML = filtered.map(p => `
+                <tr class="hover:bg-stone-50">
+                    <td class="p-3 flex items-center gap-2">
+                        <img src="${p.image}" class="w-9 h-11 object-cover rounded border">
+                        <div><strong class="block truncate max-w-xs">${p.title}</strong><span class="text-[10px] text-stone-400 font-mono">${p.id}</span></div>
+                    </td>
+                    <td class="p-3 text-stone-600">${p.category}</td>
+                    <td class="p-3"><strong class="text-brand-rose">${config.currency}${p.salePrice}</strong> <span class="text-stone-400 line-through text-[10px]">${config.currency}${p.originalPrice}</span></td>
+                    <td class="p-3"><button onclick="toggleStock('${p.id}')" class="px-2 py-0.5 rounded text-[10px] font-bold ${p.inStock ? 'bg-emerald-100 text-emerald-800' : 'bg-stone-200'}">${p.inStock ? 'In Stock' : 'Sold Out'}</button></td>
+                    <td class="p-3 text-right">
+                        <button onclick="editProduct('${p.id}')" class="text-blue-600 font-bold mr-2">Edit</button>
+                        <button onclick="deleteProduct('${p.id}')" class="text-red-600 font-bold">Delete</button>
+                    </td>
+                </tr>
+            `).join('');
         }
 
-        function renderAdminStats() {
-            const products = StoreDB.getProducts();
-            const config = StoreDB.getConfig();
-            const categories = new Set(products.map(p => p.category));
-
-            document.getElementById('statTotalProducts').textContent = products.length;
-            document.getElementById('statTotalCategories').textContent = categories.size;
-            document.getElementById('statWhatsAppNum').textContent = '+' + config.phone;
-        }
-
-        function renderAdminProducts() {
-            const products = StoreDB.getProducts();
-            const config = StoreDB.getConfig();
-            const searchVal = document.getElementById('adminSearch').value.toLowerCase();
-            const catVal = document.getElementById('adminCategoryFilter').value;
-
-            const filtered = products.filter(p => {
-                const matchCat = catVal === "All" || p.category === catVal;
-                const matchSearch = !searchVal || p.title.toLowerCase().includes(searchVal) || p.id.toLowerCase().includes(searchVal);
-                return matchCat && matchSearch;
-            });
-
-            const tbody = document.getElementById('adminProductsTableBody');
-
-            if (filtered.length === 0) {
-                tbody.innerHTML = `
-                    <tr>
-                        <td colspan="6" class="text-center py-12 text-stone-400">
-                            No outfits found. Click "+ Add New Suit" to add a new outfit!
-                        </td>
-                    </tr>
-                `;
-                return;
-            }
-
-            tbody.innerHTML = filtered.map(p => {
-                const discount = Math.round(((p.originalPrice - p.salePrice) / p.originalPrice) * 100);
-                return `
-                    <tr class="hover:bg-stone-50/80 transition">
-                        <td class="py-3 px-4">
-                            <div class="flex items-center gap-3">
-                                <img src="${p.image}" alt="${p.title}" class="w-12 h-14 object-cover rounded-lg border border-stone-200 shadow-xs">
-                                <div>
-                                    <h4 class="font-bold text-stone-900 max-w-xs truncate">${p.title}</h4>
-                                    <span class="text-[10px] text-stone-400 font-mono">ID: ${p.id}</span>
-                                    ${p.badge ? `<span class="ml-1 text-[9px] font-bold bg-brand-50 text-brand-rose px-1.5 py-0.5 rounded">${p.badge}</span>` : ''}
-                                </div>
-                            </div>
-                        </td>
-                        <td class="py-3 px-4">
-                            <span class="font-semibold text-stone-700 block">${p.category}</span>
-                            <span class="text-[11px] text-stone-400 truncate max-w-[180px] block">${p.fabric}</span>
-                        </td>
-                        <td class="py-3 px-4">
-                            <div class="flex items-baseline gap-1.5">
-                                <span class="font-bold text-brand-rose text-sm">${config.currency}${p.salePrice.toLocaleString('en-IN')}</span>
-                                <span class="text-stone-400 line-through text-[11px]">${config.currency}${p.originalPrice.toLocaleString('en-IN')}</span>
-                            </div>
-                            <span class="text-[10px] font-bold text-emerald-700">${discount}% OFF</span>
-                        </td>
-                        <td class="py-3 px-4">
-                            <div class="flex flex-wrap gap-1 max-w-[140px]">
-                                ${p.sizes.map(s => `<span class="bg-stone-100 text-stone-600 text-[10px] px-1.5 py-0.5 rounded">${s}</span>`).join('')}
-                            </div>
-                        </td>
-                        <td class="py-3 px-4">
-                            <button onclick="toggleProductStock('${p.id}')" class="px-2.5 py-1 rounded-full text-[10px] font-bold transition ${p.inStock ? 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200' : 'bg-stone-200 text-stone-600 hover:bg-stone-300'}">
-                                ${p.inStock ? '✓ In Stock' : '✕ Sold Out'}
-                            </button>
-                        </td>
-                        <td class="py-3 px-4 text-right">
-                            <div class="flex items-center justify-end gap-1.5">
-                                <button onclick="editProduct('${p.id}')" class="p-1.5 text-stone-600 hover:text-brand-rose hover:bg-brand-50 rounded-lg transition" title="Edit Item">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                                </button>
-                                <button onclick="deleteProductPrompt('${p.id}', '${p.title.replace(/'/g, "\\'")}')" class="p-1.5 text-stone-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition" title="Delete Item">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
-        }
-
-        function calculateDiscountPreview() {
-            const original = parseFloat(document.getElementById('prodOriginalPrice').value) || 0;
-            const sale = parseFloat(document.getElementById('prodSalePrice').value) || 0;
-            const preview = document.getElementById('discountPreviewText');
-
-            if (original > 0 && sale > 0 && original >= sale) {
-                const discount = Math.round(((original - sale) / original) * 100);
-                preview.textContent = `${discount}% OFF`;
-                preview.className = "text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 text-center";
-            } else {
-                preview.textContent = "0% OFF";
-                preview.className = "text-xs font-bold text-stone-400 bg-stone-100 border border-stone-200 rounded-xl p-2.5 text-center";
-            }
-        }
-
-        function handleImageFileSelect(event) {
-            const file = event.target.files[0];
+        function handleImageFileSelect(e) {
+            const file = e.target.files[0];
             if (!file) return;
-
             const reader = new FileReader();
-            reader.onload = function(e) {
-                currentUploadedImageBase64 = e.target.result;
-                updateImagePreview(currentUploadedImageBase64);
-                document.getElementById('prodImageUrl').value = "";
-            };
+            reader.onload = (evt) => { currentUploadedImage = evt.target.result; document.getElementById('prodImageUrl').value = ""; };
             reader.readAsDataURL(file);
-        }
-
-        function updateImagePreview(src) {
-            const img = document.getElementById('imagePreview');
-            const placeholder = document.getElementById('imagePreviewPlaceholder');
-            if (src && src.length > 5) {
-                img.src = src;
-                img.classList.remove('hidden');
-                placeholder.classList.add('hidden');
-            } else {
-                img.src = "";
-                img.classList.add('hidden');
-                placeholder.classList.remove('hidden');
-            }
         }
 
         function openProductModal(isEdit = false) {
             document.getElementById('productForm').reset();
-            currentUploadedImageBase64 = "";
-            updateImagePreview("");
-            calculateDiscountPreview();
-            
-            if (!isEdit) {
-                document.getElementById('editProductId').value = "";
-                document.getElementById('modalTitle').textContent = "Add New Suit / Product";
-            }
-
-            const modal = document.getElementById('productModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            currentUploadedImage = "";
+            if (!isEdit) document.getElementById('editProductId').value = "";
+            document.getElementById('productModal').classList.remove('hidden');
+            document.getElementById('productModal').classList.add('flex');
         }
-
-        function closeProductModal() {
-            const modal = document.getElementById('productModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
+        function closeProductModal() { document.getElementById('productModal').classList.add('hidden'); document.getElementById('productModal').classList.remove('flex'); }
 
         window.editProduct = function(id) {
-            const product = StoreDB.getProducts().find(p => p.id === id);
-            if (!product) return;
-
+            const p = StoreDB.getProducts().find(i => i.id === id);
+            if (!p) return;
             openProductModal(true);
             document.getElementById('modalTitle').textContent = "Edit Outfit Details";
-            document.getElementById('editProductId').value = product.id;
-            document.getElementById('prodTitle').value = product.title;
-            document.getElementById('prodCategory').value = product.category;
-            document.getElementById('prodBadge').value = product.badge || "";
-            document.getElementById('prodOriginalPrice').value = product.originalPrice;
-            document.getElementById('prodSalePrice').value = product.salePrice;
-            document.getElementById('prodFabric').value = product.fabric;
-            document.getElementById('prodDescription').value = product.description || "";
-            document.getElementById('prodImageUrl').value = product.image.startsWith('data:') ? '' : product.image;
-            document.getElementById('prodInStock').checked = product.inStock !== false;
-
-            currentUploadedImageBase64 = product.image;
-            updateImagePreview(product.image);
-            calculateDiscountPreview();
-
-            document.querySelectorAll('input[name="sizes"]').forEach(cb => {
-                cb.checked = product.sizes.includes(cb.value);
-            });
+            document.getElementById('editProductId').value = p.id;
+            document.getElementById('prodTitle').value = p.title;
+            document.getElementById('prodCategory').value = p.category;
+            document.getElementById('prodBadge').value = p.badge || "";
+            document.getElementById('prodOriginalPrice').value = p.originalPrice;
+            document.getElementById('prodSalePrice').value = p.salePrice;
+            document.getElementById('prodFabric').value = p.fabric;
+            document.getElementById('prodImageUrl').value = p.image.startsWith('data:') ? '' : p.image;
+            currentUploadedImage = p.image;
         };
 
         document.getElementById('productForm').addEventListener('submit', (e) => {
             e.preventDefault();
-
             const editId = document.getElementById('editProductId').value;
-            const title = document.getElementById('prodTitle').value.trim();
-            const category = document.getElementById('prodCategory').value;
-            const badge = document.getElementById('prodBadge').value;
-            const originalPrice = parseFloat(document.getElementById('prodOriginalPrice').value);
-            const salePrice = parseFloat(document.getElementById('prodSalePrice').value);
-            const fabric = document.getElementById('prodFabric').value.trim();
-            const description = document.getElementById('prodDescription').value.trim();
-            const urlInput = document.getElementById('prodImageUrl').value.trim();
-            const inStock = document.getElementById('prodInStock').checked;
-
-            const finalImage = currentUploadedImageBase64 || urlInput || "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop";
-
-            const sizes = Array.from(document.querySelectorAll('input[name="sizes"]:checked')).map(cb => cb.value);
-            if (sizes.length === 0) sizes.push("Free Size");
-
-            const productData = {
-                title,
-                category,
-                badge,
-                originalPrice,
-                salePrice,
-                fabric,
-                description,
-                image: finalImage,
-                sizes,
-                inStock
+            const data = {
+                title: document.getElementById('prodTitle').value.trim(),
+                category: document.getElementById('prodCategory').value,
+                badge: document.getElementById('prodBadge').value.trim(),
+                originalPrice: parseFloat(document.getElementById('prodOriginalPrice').value),
+                salePrice: parseFloat(document.getElementById('prodSalePrice').value),
+                fabric: document.getElementById('prodFabric').value.trim(),
+                image: currentUploadedImage || document.getElementById('prodImageUrl').value.trim() || "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop",
+                sizes: ["S", "M", "L", "XL", "Semi-Stitched"],
+                inStock: true
             };
-
-            if (editId) {
-                StoreDB.updateProduct(editId, productData);
-            } else {
-                StoreDB.addProduct(productData);
-            }
-
+            if (editId) StoreDB.updateProduct(editId, data); else StoreDB.addProduct(data);
             closeProductModal();
-            renderAdminStats();
-            renderAdminProducts();
+            renderTable();
         });
 
-        window.toggleProductStock = function(id) {
-            const product = StoreDB.getProducts().find(p => p.id === id);
-            if (product) {
-                StoreDB.updateProduct(id, { inStock: !product.inStock });
-                renderAdminProducts();
-            }
-        };
+        window.toggleStock = function(id) { const p = StoreDB.getProducts().find(i => i.id === id); if (p) { StoreDB.updateProduct(id, { inStock: !p.inStock }); renderTable(); } };
+        window.deleteProduct = function(id) { if (confirm("Delete this outfit?")) { StoreDB.deleteProduct(id); renderTable(); } };
 
-        window.deleteProductPrompt = function(id, title) {
-            if (confirm(`Are you sure you want to delete "${title}"?`)) {
-                StoreDB.deleteProduct(id);
-                renderAdminStats();
-                renderAdminProducts();
-            }
-        };
-
-        function populateSettingsForm() {
+        function populateSettings() {
             const config = StoreDB.getConfig();
             document.getElementById('settingPhone').value = config.phone;
             document.getElementById('settingAnnouncement').value = config.announcement;
-            document.getElementById('settingStoreName').value = config.storeName;
-            document.getElementById('settingCurrency').value = config.currency;
             document.getElementById('settingAddress').value = config.address || "";
             document.getElementById('settingAdminPin').value = config.adminPin || "Chirag@12300";
         }
 
         document.getElementById('settingsForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            const phone = document.getElementById('settingPhone').value.replace(/[^0-9]/g, '');
-            const announcement = document.getElementById('settingAnnouncement').value.trim();
-            const storeName = document.getElementById('settingStoreName').value.trim();
-            const currency = document.getElementById('settingCurrency').value.trim();
-            const address = document.getElementById('settingAddress').value.trim();
-            const adminPin = document.getElementById('settingAdminPin').value.trim() || "Chirag@12300";
-
             StoreDB.saveConfig({
-                phone,
-                announcement,
-                storeName,
-                currency,
-                address,
-                adminPin
+                phone: document.getElementById('settingPhone').value.replace(/[^0-9]/g, ''),
+                announcement: document.getElementById('settingAnnouncement').value.trim(),
+                address: document.getElementById('settingAddress').value.trim(),
+                adminPin: document.getElementById('settingAdminPin').value.trim() || "Chirag@12300"
             });
-
-            const status = document.getElementById('settingsSaveStatus');
-            status.classList.remove('hidden');
-            setTimeout(() => status.classList.add('hidden'), 3000);
-            renderAdminStats();
+            const s = document.getElementById('settingsSaveStatus'); s.classList.remove('hidden'); setTimeout(() => s.classList.add('hidden'), 2500);
         });
 
         window.exportStoreData = function() {
-            const exportData = {
-                timestamp: new Date().toISOString(),
-                config: StoreDB.getConfig(),
-                products: StoreDB.getProducts()
-            };
-
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
-            const downloadAnchor = document.createElement('a');
-            downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", `ethnic_grace_panipat_${new Date().toISOString().slice(0,10)}.json`);
-            document.body.appendChild(downloadAnchor);
-            downloadAnchor.click();
-            downloadAnchor.remove();
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ config: StoreDB.getConfig(), products: StoreDB.getProducts() }, null, 2));
+            const a = document.createElement('a'); a.href = dataStr; a.download = `ethnic_grace_${new Date().toISOString().slice(0,10)}.json`; a.click();
         };
 
-        window.importStoreData = function(event) {
-            const file = event.target.files[0];
+        window.importStoreData = function(e) {
+            const file = e.target.files[0];
             if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
+            const r = new FileReader();
+            r.onload = (evt) => {
                 try {
-                    const parsed = JSON.parse(e.target.result);
-                    if (parsed.products && Array.isArray(parsed.products)) {
-                        StoreDB.saveProducts(parsed.products);
-                        if (parsed.config) StoreDB.saveConfig(parsed.config);
-                        alert("✓ Store data successfully restored!");
-                        initDashboard();
-                    } else {
-                        alert("Invalid backup file structure.");
-                    }
-                } catch (err) {
-                    alert("Failed to parse JSON file.");
-                }
+                    const parsed = JSON.parse(evt.target.result);
+                    if (parsed.products) { StoreDB.saveProducts(parsed.products); if (parsed.config) StoreDB.saveConfig(parsed.config); alert("✓ Restored!"); init(); }
+                } catch(err) { alert("Invalid JSON file"); }
             };
-            reader.readAsText(file);
+            r.readAsText(file);
         };
 
-        window.resetDemoCatalog = function() {
-            if (confirm("Reset everything to Panipat Grand Opening collection?")) {
-                StoreDB.resetToDefault();
-                initDashboard();
-                alert("✓ Store catalog reset to default.");
-            }
-        };
-
-        document.getElementById('adminSearch').addEventListener('input', renderAdminProducts);
-        document.getElementById('adminCategoryFilter').addEventListener('change', renderAdminProducts);
+        document.getElementById('adminSearch').addEventListener('input', renderTable);
+        document.getElementById('adminCategoryFilter').addEventListener('change', renderTable);
     </script>
 </body>
 </html>
