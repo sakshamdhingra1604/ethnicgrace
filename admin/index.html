@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethnic Grace | Admin Management Panel</title>
+    <title>Ethnic Grace Panipat | Admin Management Panel</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,27 +37,30 @@
 </head>
 <body class="bg-stone-100 text-stone-800 font-sans antialiased min-h-screen">
 
-    <!-- Auth PIN Gate (Simple lock for security) -->
+    <!-- Auth PIN Gate -->
     <div id="authGate" class="fixed inset-0 z-50 bg-stone-900/90 backdrop-blur-md flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-sm w-full p-8 text-center shadow-2xl border border-stone-200">
             <div class="w-16 h-16 rounded-full bg-brand-50 border-2 border-brand-rose/20 text-brand-rose mx-auto flex items-center justify-center text-2xl mb-4 font-serif font-bold">
                 EG
             </div>
-            <h2 class="font-serif text-xl font-bold text-stone-900 mb-1">Ethnic Grace Admin</h2>
-            <p class="text-xs text-stone-500 mb-6">Enter Admin PIN to manage catalog & orders</p>
+            <div class="flex items-center justify-center gap-1.5 mb-1">
+                <h2 class="font-serif text-xl font-bold text-stone-900">Ethnic Grace Admin</h2>
+                <span class="bg-amber-100 text-amber-900 text-[9px] font-extrabold px-1.5 py-0.5 rounded">PANIPAT</span>
+            </div>
+            <p class="text-xs text-stone-500 mb-6">Enter Admin PIN to manage catalog & shop</p>
             
             <form id="authForm" class="space-y-4">
                 <div>
-                    <input type="password" id="pinInput" placeholder="Default PIN: 1234" maxlength="8"
-                        class="w-full text-center tracking-widest text-2xl font-bold py-3 px-4 bg-stone-50 border border-stone-300 rounded-xl focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                    <input type="password" id="pinInput" placeholder="Enter Admin PIN" maxlength="20"
+                        class="w-full text-center tracking-wider text-xl font-bold py-3 px-4 bg-stone-50 border border-stone-300 rounded-xl focus:ring-2 focus:ring-brand-rose focus:outline-none">
                 </div>
-                <div id="authError" class="text-xs text-red-600 font-semibold hidden">Incorrect PIN! Try 1234</div>
-                <button type="submit" class="w-full bg-brand-rose hover:bg-brand-rose-dark text-white font-bold py-3 px-4 rounded-xl transition">
+                <div id="authError" class="text-xs text-red-600 font-semibold hidden">Incorrect PIN! (Default: Chirag@12300)</div>
+                <button type="submit" class="w-full bg-brand-rose hover:bg-brand-rose-dark text-white font-bold py-3 px-4 rounded-xl transition shadow-md">
                     Unlock Dashboard
                 </button>
             </form>
             <div class="mt-4 pt-4 border-t border-stone-100 text-[11px] text-stone-400">
-                Default PIN is <span class="font-mono font-bold text-stone-600">1234</span> (Changeable in settings)
+                Current PIN: <span class="font-mono font-bold text-stone-700">Chirag@12300</span>
             </div>
         </div>
     </div>
@@ -76,10 +79,13 @@
                             EG
                         </div>
                         <div>
-                            <h1 class="font-serif font-bold text-base text-stone-900 leading-none">Ethnic Grace</h1>
+                            <div class="flex items-center gap-1.5">
+                                <h1 class="font-serif font-bold text-base text-stone-900 leading-none">Ethnic Grace</h1>
+                                <span class="text-[9px] bg-amber-100 text-amber-900 font-bold px-1 rounded">PANIPAT</span>
+                            </div>
                             <span class="text-[10px] text-emerald-600 font-semibold flex items-center gap-1 mt-0.5">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                                Live Store Connected
+                                WhatsApp: +91 95182 85233 Connected
                             </span>
                         </div>
                     </div>
@@ -87,10 +93,10 @@
                     <!-- Navigation Tabs -->
                     <nav class="hidden md:flex items-center gap-1 bg-stone-100 p-1 rounded-xl">
                         <button onclick="switchTab('products')" class="admin-tab active-tab px-4 py-1.5 text-xs font-bold rounded-lg transition bg-white text-stone-900 shadow-xs" data-tab="products">
-                            👗 Manage Products
+                            👗 Manage Outfits (10% Sale)
                         </button>
                         <button onclick="switchTab('settings')" class="admin-tab px-4 py-1.5 text-xs font-medium rounded-lg transition text-stone-600 hover:text-stone-900" data-tab="settings">
-                            ⚙️ Store & WhatsApp Settings
+                            ⚙️ Panipat Store & WhatsApp
                         </button>
                         <button onclick="switchTab('backup')" class="admin-tab px-4 py-1.5 text-xs font-medium rounded-lg transition text-stone-600 hover:text-stone-900" data-tab="backup">
                             💾 Backup & Restore
@@ -112,8 +118,8 @@
 
             <!-- Mobile Subnav -->
             <div class="flex md:hidden border-t border-stone-100 bg-stone-50 px-2 py-1 gap-1 overflow-x-auto">
-                <button onclick="switchTab('products')" class="admin-tab active-tab flex-1 whitespace-nowrap px-3 py-1.5 text-xs font-bold rounded-lg transition bg-white text-stone-900 shadow-xs" data-tab="products">👗 Products</button>
-                <button onclick="switchTab('settings')" class="admin-tab flex-1 whitespace-nowrap px-3 py-1.5 text-xs font-medium rounded-lg transition text-stone-600" data-tab="settings">⚙️ Settings</button>
+                <button onclick="switchTab('products')" class="admin-tab active-tab flex-1 whitespace-nowrap px-3 py-1.5 text-xs font-bold rounded-lg transition bg-white text-stone-900 shadow-xs" data-tab="products">👗 Outfits</button>
+                <button onclick="switchTab('settings')" class="admin-tab flex-1 whitespace-nowrap px-3 py-1.5 text-xs font-medium rounded-lg transition text-stone-600" data-tab="settings">⚙️ Store Settings</button>
                 <button onclick="switchTab('backup')" class="admin-tab flex-1 whitespace-nowrap px-3 py-1.5 text-xs font-medium rounded-lg transition text-stone-600" data-tab="backup">💾 Backup</button>
             </div>
         </header>
@@ -124,7 +130,7 @@
             <!-- TAB 1: PRODUCTS MANAGER -->
             <section id="tab-products" class="tab-content block">
                 
-                <!-- Quick Stats & Action Banner -->
+                <!-- Quick Stats -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                     <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-xs flex items-center justify-between">
                         <div>
@@ -144,8 +150,8 @@
 
                     <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-xs flex items-center justify-between">
                         <div>
-                            <span class="text-xs text-stone-500 block">WhatsApp Number</span>
-                            <span id="statWhatsAppNum" class="text-xs font-mono font-bold text-emerald-700 block mt-1">+91...</span>
+                            <span class="text-xs text-stone-500 block">WhatsApp Orders Line</span>
+                            <span id="statWhatsAppNum" class="text-xs font-mono font-bold text-emerald-700 block mt-1">+91 95182 85233</span>
                         </div>
                         <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl">💬</div>
                     </div>
@@ -155,7 +161,7 @@
                 <div class="bg-white p-4 rounded-2xl border border-stone-200 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div class="flex items-center gap-3 w-full sm:w-auto">
                         <div class="relative flex-1 sm:w-64">
-                            <input type="text" id="adminSearch" placeholder="Search products..." 
+                            <input type="text" id="adminSearch" placeholder="Search Panipat suits..." 
                                 class="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl py-2.5 pl-9 pr-3 focus:outline-none focus:ring-2 focus:ring-brand-rose">
                             <span class="absolute left-3 top-2.5 text-stone-400 text-xs">🔍</span>
                         </div>
@@ -175,7 +181,7 @@
                     </button>
                 </div>
 
-                <!-- Products Table / Card Grid -->
+                <!-- Products Table -->
                 <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
                     <div class="overflow-x-auto">
                         <table class="w-full text-left border-collapse">
@@ -202,26 +208,25 @@
             <section id="tab-settings" class="tab-content hidden max-w-3xl mx-auto">
                 <div class="bg-white p-6 sm:p-8 rounded-2xl border border-stone-200 shadow-xs">
                     <div class="border-b border-stone-100 pb-4 mb-6">
-                        <h3 class="font-serif text-xl font-bold text-stone-900">Store Settings & WhatsApp Integration</h3>
-                        <p class="text-xs text-stone-500 mt-1">Updates made here immediately reflect on your live website.</p>
+                        <h3 class="font-serif text-xl font-bold text-stone-900">Panipat Store Details & WhatsApp Settings</h3>
+                        <p class="text-xs text-stone-500 mt-1">Changes made here immediately update on your live website.</p>
                     </div>
 
                     <form id="settingsForm" class="space-y-6">
                         <div>
-                            <label class="block text-xs font-bold text-stone-700 mb-1">WhatsApp Business Number (With Country Code)</label>
+                            <label class="block text-xs font-bold text-stone-700 mb-1">WhatsApp Business Number</label>
                             <div class="flex gap-2">
                                 <span class="bg-stone-100 border border-stone-300 rounded-xl px-3.5 py-2.5 text-xs font-mono font-bold text-stone-600 flex items-center">💬 +</span>
-                                <input type="text" id="settingPhone" placeholder="919876543210" required
-                                    class="flex-1 text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 font-mono focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                                <input type="text" id="settingPhone" placeholder="919518285233" required
+                                    class="flex-1 text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 font-mono font-bold focus:ring-2 focus:ring-brand-rose focus:outline-none">
                             </div>
-                            <p class="text-[11px] text-stone-400 mt-1">Example: 91 followed by 10 digit mobile number (e.g., 919876543210)</p>
+                            <p class="text-[11px] text-stone-400 mt-1">Current WhatsApp: 919518285233 (Country code 91 included)</p>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-stone-700 mb-1">Top Announcement Bar Text</label>
-                            <input type="text" id="settingAnnouncement" placeholder="✨ Festive Special Offer Text..."
+                            <input type="text" id="settingAnnouncement" placeholder="🎉 GRAND OPENING: Flat 10% OFF..."
                                 class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                            <p class="text-[11px] text-stone-400 mt-1">This announcement scrolls at the very top of your homepage.</p>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -238,15 +243,16 @@
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-stone-700 mb-1">Boutique Address / Location Text</label>
-                            <input type="text" id="settingAddress" placeholder="Boutique Lane, Fashion Market, Delhi, India"
+                            <label class="block text-xs font-bold text-stone-700 mb-1">Boutique Address (Panipat)</label>
+                            <input type="text" id="settingAddress" placeholder="Plot no. 99, Uttam Nagar, Devi Mandir Main Road, Panipat - 132103"
                                 class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-stone-700 mb-1">Change Admin PIN</label>
-                            <input type="password" id="settingAdminPin" placeholder="Enter new 4-digit PIN" maxlength="8"
-                                class="w-full max-w-xs text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 tracking-widest font-mono focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                            <label class="block text-xs font-bold text-stone-700 mb-1">Admin Security PIN</label>
+                            <input type="text" id="settingAdminPin" placeholder="Chirag@12300" maxlength="20"
+                                class="w-full max-w-xs text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 font-mono font-bold focus:ring-2 focus:ring-brand-rose focus:outline-none">
+                            <p class="text-[11px] text-stone-400 mt-1">Current PIN is set to <span class="font-mono font-bold text-stone-700">Chirag@12300</span></p>
                         </div>
 
                         <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
@@ -268,10 +274,9 @@
                         <p class="text-xs text-stone-500 mt-1">Download your full store catalog as a backup file or restore it anytime.</p>
                     </div>
 
-                    <!-- Export -->
                     <div class="p-5 bg-stone-50 rounded-xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
-                            <h4 class="text-xs font-bold text-stone-800">📥 Export Store Backup (JSON)</h4>
+                            <h4 class="text-xs font-bold text-stone-800">📥 Export Panipat Catalog Backup (JSON)</h4>
                             <p class="text-[11px] text-stone-500 mt-0.5">Save all products, prices, images and settings to your computer.</p>
                         </div>
                         <button onclick="exportStoreData()" class="bg-stone-800 hover:bg-black text-white text-xs font-bold px-4 py-2.5 rounded-xl whitespace-nowrap transition">
@@ -279,7 +284,6 @@
                         </button>
                     </div>
 
-                    <!-- Import -->
                     <div class="p-5 bg-stone-50 rounded-xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
                             <h4 class="text-xs font-bold text-stone-800">📤 Restore / Upload Backup</h4>
@@ -293,11 +297,10 @@
                         </div>
                     </div>
 
-                    <!-- Reset to demo -->
                     <div class="p-5 bg-red-50/60 rounded-xl border border-red-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
-                            <h4 class="text-xs font-bold text-red-800">⚠️ Reset to Default Demo Collection</h4>
-                            <p class="text-[11px] text-red-600 mt-0.5">Reload the original sample suits and settings.</p>
+                            <h4 class="text-xs font-bold text-red-800">⚠️ Reset to Grand Opening Collection</h4>
+                            <p class="text-[11px] text-red-600 mt-0.5">Reload the default Panipat launch suits and settings.</p>
                         </div>
                         <button onclick="resetDemoCatalog()" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl whitespace-nowrap transition">
                             Reset Sample Data
@@ -327,14 +330,12 @@
             <form id="productForm" class="space-y-4">
                 <input type="hidden" id="editProductId">
 
-                <!-- Product Name -->
                 <div>
                     <label class="block text-xs font-bold text-stone-700 mb-1">Product Title / Name *</label>
-                    <input type="text" id="prodTitle" required placeholder="e.g. Royal Crimson Hand Embroidered Suit"
+                    <input type="text" id="prodTitle" required placeholder="e.g. Panipat Special Crimson Embroidered Suit"
                         class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
                 </div>
 
-                <!-- Category & Badge -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-stone-700 mb-1">Category *</label>
@@ -350,17 +351,17 @@
                     <div>
                         <label class="block text-xs font-bold text-stone-700 mb-1">Tag / Badge</label>
                         <select id="prodBadge" class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
-                            <option value="Best Seller">Best Seller</option>
-                            <option value="Trending">Trending</option>
-                            <option value="Festive Special">Festive Special</option>
+                            <option value="Grand Opening Special">Grand Opening Special</option>
                             <option value="New Arrival">New Arrival</option>
+                            <option value="Panipat Special">Panipat Special</option>
+                            <option value="Hot Seller">Hot Seller</option>
+                            <option value="10% OFF Launch">10% OFF Launch</option>
                             <option value="Limited Edition">Limited Edition</option>
                             <option value="">No Badge</option>
                         </select>
                     </div>
                 </div>
 
-                <!-- Prices -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-stone-700 mb-1">Original Price (MRP) ₹ *</label>
@@ -369,34 +370,31 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-stone-700 mb-1">Special Sale Price ₹ *</label>
-                        <input type="number" id="prodSalePrice" required min="1" placeholder="1799" oninput="calculateDiscountPreview()"
+                        <label class="block text-xs font-bold text-stone-700 mb-1">Opening Sale Price ₹ *</label>
+                        <input type="number" id="prodSalePrice" required min="1" placeholder="2699" oninput="calculateDiscountPreview()"
                             class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-stone-700 mb-1">Calculated Discount</label>
                         <div id="discountPreviewText" class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 text-center">
-                            0% OFF
+                            10% OFF
                         </div>
                     </div>
                 </div>
 
-                <!-- Fabric & Details -->
                 <div>
                     <label class="block text-xs font-bold text-stone-700 mb-1">Fabric & Work Summary *</label>
-                    <input type="text" id="prodFabric" required placeholder="e.g. Pure Chanderi Silk with Heavy Thread Embroidery & Organza Dupatta"
+                    <input type="text" id="prodFabric" required placeholder="e.g. Pure Georgette with Zari Embroidery & Scalloped Dupatta"
                         class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none">
                 </div>
 
-                <!-- Description -->
                 <div>
                     <label class="block text-xs font-bold text-stone-700 mb-1">Detailed Description (Optional)</label>
-                    <textarea id="prodDescription" rows="2" placeholder="Include details like dupatta length, bottom fabric, wash care instructions..."
+                    <textarea id="prodDescription" rows="2" placeholder="Panipat boutique trial fitting available, dupatta length, bottom fabric..."
                         class="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-rose focus:outline-none"></textarea>
                 </div>
 
-                <!-- Image Upload (Direct File or URL) -->
                 <div>
                     <label class="block text-xs font-bold text-stone-700 mb-1">Product Photo *</label>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
@@ -411,7 +409,6 @@
                         </div>
                     </div>
 
-                    <!-- Image Preview -->
                     <div class="mt-3 flex items-center gap-3">
                         <div class="w-16 h-20 bg-stone-100 rounded-xl overflow-hidden border border-stone-200 flex items-center justify-center">
                             <img id="imagePreview" src="" alt="Preview" class="w-full h-full object-cover hidden">
@@ -421,7 +418,6 @@
                     </div>
                 </div>
 
-                <!-- Sizes Selector -->
                 <div>
                     <label class="block text-xs font-bold text-stone-700 mb-2">Available Sizes *</label>
                     <div class="flex flex-wrap gap-2 text-xs">
@@ -452,15 +448,13 @@
                     </div>
                 </div>
 
-                <!-- In Stock Toggle -->
                 <div class="pt-2">
                     <label class="inline-flex items-center gap-2 cursor-pointer">
                         <input type="checkbox" id="prodInStock" checked class="w-4 h-4 text-emerald-600 rounded">
-                        <span class="text-xs font-bold text-stone-700">Currently in Stock (Available for ordering)</span>
+                        <span class="text-xs font-bold text-stone-700">Currently in Stock (Available in Panipat Shop & Online)</span>
                     </label>
                 </div>
 
-                <!-- Submit buttons -->
                 <div class="pt-4 border-t border-stone-100 flex items-center justify-end gap-3">
                     <button type="button" onclick="closeProductModal()" class="px-5 py-2.5 text-xs font-semibold text-stone-600 hover:bg-stone-100 rounded-xl transition">
                         Cancel
@@ -477,7 +471,6 @@
     <!-- Scripts -->
     <script src="../products.js"></script>
     <script>
-        // Check Auth
         let currentUploadedImageBase64 = "";
 
         const authGate = document.getElementById('authGate');
@@ -486,7 +479,6 @@
         const pinInput = document.getElementById('pinInput');
         const authError = document.getElementById('authError');
 
-        // Check session
         if (sessionStorage.getItem('ethnic_admin_auth') === 'true') {
             authGate.classList.add('hidden');
             dashboardApp.classList.remove('hidden');
@@ -497,7 +489,7 @@
             e.preventDefault();
             const config = StoreDB.getConfig();
             const pin = pinInput.value.trim();
-            const expectedPin = config.adminPin || "1234";
+            const expectedPin = config.adminPin || "Chirag@12300";
 
             if (pin === expectedPin) {
                 sessionStorage.setItem('ethnic_admin_auth', 'true');
@@ -514,7 +506,6 @@
             location.reload();
         }
 
-        // Tab Switching
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.admin-tab').forEach(el => {
@@ -531,7 +522,6 @@
             });
         }
 
-        // Dashboard Initializer
         function initDashboard() {
             renderAdminStats();
             renderAdminProducts();
@@ -548,7 +538,6 @@
             document.getElementById('statWhatsAppNum').textContent = '+' + config.phone;
         }
 
-        // Render Table
         function renderAdminProducts() {
             const products = StoreDB.getProducts();
             const config = StoreDB.getConfig();
@@ -567,7 +556,7 @@
                 tbody.innerHTML = `
                     <tr>
                         <td colspan="6" class="text-center py-12 text-stone-400">
-                            No products found matching criteria. Click "+ Add New Suit" to create one!
+                            No outfits found. Click "+ Add New Suit" to add a new outfit!
                         </td>
                     </tr>
                 `;
@@ -624,7 +613,6 @@
             }).join('');
         }
 
-        // Live discount preview calculation
         function calculateDiscountPreview() {
             const original = parseFloat(document.getElementById('prodOriginalPrice').value) || 0;
             const sale = parseFloat(document.getElementById('prodSalePrice').value) || 0;
@@ -640,7 +628,6 @@
             }
         }
 
-        // Image Handling
         function handleImageFileSelect(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -649,7 +636,7 @@
             reader.onload = function(e) {
                 currentUploadedImageBase64 = e.target.result;
                 updateImagePreview(currentUploadedImageBase64);
-                document.getElementById('prodImageUrl').value = ""; // clear URL input
+                document.getElementById('prodImageUrl').value = "";
             };
             reader.readAsDataURL(file);
         }
@@ -668,7 +655,6 @@
             }
         }
 
-        // Modal Operations
         function openProductModal(isEdit = false) {
             document.getElementById('productForm').reset();
             currentUploadedImageBase64 = "";
@@ -691,7 +677,6 @@
             modal.classList.remove('flex');
         }
 
-        // Edit Product
         window.editProduct = function(id) {
             const product = StoreDB.getProducts().find(p => p.id === id);
             if (!product) return;
@@ -713,13 +698,11 @@
             updateImagePreview(product.image);
             calculateDiscountPreview();
 
-            // Set sizes checkboxes
             document.querySelectorAll('input[name="sizes"]').forEach(cb => {
                 cb.checked = product.sizes.includes(cb.value);
             });
         };
 
-        // Form Submit for Add / Edit
         document.getElementById('productForm').addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -734,10 +717,8 @@
             const urlInput = document.getElementById('prodImageUrl').value.trim();
             const inStock = document.getElementById('prodInStock').checked;
 
-            // Resolve Image
             const finalImage = currentUploadedImageBase64 || urlInput || "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop";
 
-            // Resolve selected sizes
             const sizes = Array.from(document.querySelectorAll('input[name="sizes"]:checked')).map(cb => cb.value);
             if (sizes.length === 0) sizes.push("Free Size");
 
@@ -765,7 +746,6 @@
             renderAdminProducts();
         });
 
-        // Stock Toggle
         window.toggleProductStock = function(id) {
             const product = StoreDB.getProducts().find(p => p.id === id);
             if (product) {
@@ -774,7 +754,6 @@
             }
         };
 
-        // Delete Product
         window.deleteProductPrompt = function(id, title) {
             if (confirm(`Are you sure you want to delete "${title}"?`)) {
                 StoreDB.deleteProduct(id);
@@ -783,7 +762,6 @@
             }
         };
 
-        // Settings Management
         function populateSettingsForm() {
             const config = StoreDB.getConfig();
             document.getElementById('settingPhone').value = config.phone;
@@ -791,7 +769,7 @@
             document.getElementById('settingStoreName').value = config.storeName;
             document.getElementById('settingCurrency').value = config.currency;
             document.getElementById('settingAddress').value = config.address || "";
-            document.getElementById('settingAdminPin').value = config.adminPin || "1234";
+            document.getElementById('settingAdminPin').value = config.adminPin || "Chirag@12300";
         }
 
         document.getElementById('settingsForm').addEventListener('submit', (e) => {
@@ -801,7 +779,7 @@
             const storeName = document.getElementById('settingStoreName').value.trim();
             const currency = document.getElementById('settingCurrency').value.trim();
             const address = document.getElementById('settingAddress').value.trim();
-            const adminPin = document.getElementById('settingAdminPin').value.trim() || "1234";
+            const adminPin = document.getElementById('settingAdminPin').value.trim() || "Chirag@12300";
 
             StoreDB.saveConfig({
                 phone,
@@ -818,7 +796,6 @@
             renderAdminStats();
         });
 
-        // Backup & Restore
         window.exportStoreData = function() {
             const exportData = {
                 timestamp: new Date().toISOString(),
@@ -829,7 +806,7 @@
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
             const downloadAnchor = document.createElement('a');
             downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", `ethnic_grace_backup_${new Date().toISOString().slice(0,10)}.json`);
+            downloadAnchor.setAttribute("download", `ethnic_grace_panipat_${new Date().toISOString().slice(0,10)}.json`);
             document.body.appendChild(downloadAnchor);
             downloadAnchor.click();
             downloadAnchor.remove();
@@ -859,14 +836,13 @@
         };
 
         window.resetDemoCatalog = function() {
-            if (confirm("Reset everything to original sample collection? Any custom added suits will be cleared.")) {
+            if (confirm("Reset everything to Panipat Grand Opening collection?")) {
                 StoreDB.resetToDefault();
                 initDashboard();
-                alert("✓ Store catalog has been reset to default.");
+                alert("✓ Store catalog reset to default.");
             }
         };
 
-        // Search & Filter listeners
         document.getElementById('adminSearch').addEventListener('input', renderAdminProducts);
         document.getElementById('adminCategoryFilter').addEventListener('change', renderAdminProducts);
     </script>
